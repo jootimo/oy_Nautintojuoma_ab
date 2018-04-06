@@ -1,14 +1,16 @@
 package client;
 
+
 import host.ProcessState;
 import host.Process;
+
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
 /**
- * Tämä luokka toimii RMI:n edustajaoliona. Se lähettää käyttöliittymältä saamansa käskyt palvelimelle.
+ * Tï¿½mï¿½ luokka toimii RMI:n edustajaoliona. Se lï¿½hettï¿½ï¿½ kï¿½yttï¿½liittymï¿½ltï¿½ saamansa kï¿½skyt palvelimelle.
  */
 public class ProcessClient extends UnicastRemoteObject {
 
@@ -17,14 +19,14 @@ public class ProcessClient extends UnicastRemoteObject {
 	private String name;
 
 	/**
-	 * Konstruktori, joka luo edustajaolion ja hakee viittauksen etäolioon RMIregistrystä.
+	 * Konstruktori, joka luo edustajaolion ja hakee viittauksen etï¿½olioon RMIregistrystï¿½.
 	 * @throws RemoteException
 	 */
 	protected ProcessClient() throws RemoteException {
 		try {
 			//haetaan viittaus rekisteriin
-			Registry registry = LocateRegistry.getRegistry(null); //tässä null = localhost
-			//etsitään rekisteristä Process-niminen olio
+			Registry registry = LocateRegistry.getRegistry(null); //tï¿½ssï¿½ null = localhost
+			//etsitï¿½ï¿½n rekisteristï¿½ Process-niminen olio
 			process = (Process) registry.lookup("Process");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -32,7 +34,7 @@ public class ProcessClient extends UnicastRemoteObject {
 	}
 
 	/**
-	 * Palauttaa edustajaolioon liittyvän asiakkaan nimen
+	 * Palauttaa edustajaolioon liittyvï¿½n asiakkaan nimen
 	 * @return asiakkaan nimi
 	 */
 	public String getName() {
@@ -40,7 +42,7 @@ public class ProcessClient extends UnicastRemoteObject {
 	}
 
 	/**
-	 * Asettaa asiakkaalle nimen kirjautumisen yhteydessä
+	 * Asettaa asiakkaalle nimen kirjautumisen yhteydessï¿½
 	 * @param name asiakkaan nimi
 	 */
 	public void setName(String name) {
@@ -49,7 +51,7 @@ public class ProcessClient extends UnicastRemoteObject {
 	}
 	
 	/**
-	 * Lähettää etäkutsun palvelimelle laitteen varaamiseksi
+	 * Lï¿½hettï¿½ï¿½ etï¿½kutsun palvelimelle laitteen varaamiseksi
 	 * @param o laitteen tyyppi
 	 * @param s laitteen nimi
 	 */
@@ -63,7 +65,7 @@ public class ProcessClient extends UnicastRemoteObject {
 	}
 	
 	/**
-	 * Lähetää etäkutsun palvelimelle laitteen käynnistämiseksi
+	 * Lï¿½hetï¿½ï¿½ etï¿½kutsun palvelimelle laitteen kï¿½ynnistï¿½miseksi
 	 * @param o laitteen tyyppi
 	 * @param s laitteen nimi
 	 */
@@ -77,10 +79,10 @@ public class ProcessClient extends UnicastRemoteObject {
 	}
 	
 	/**
-	 * Lähetää etäkutsun palvelimelle ruuvikuljettimen käynnistämiseksi
+	 * Lï¿½hetï¿½ï¿½ etï¿½kutsun palvelimelle ruuvikuljettimen kï¿½ynnistï¿½miseksi
 	 * @param o laitteen tyyppi
 	 * @param procLoaderNo laitten nimi
-	 * @param amount siirrettävä määrä
+	 * @param amount siirrettï¿½vï¿½ mï¿½ï¿½rï¿½
 	 */
 	public void start(String s, int amount){	
 		try {
@@ -92,7 +94,7 @@ public class ProcessClient extends UnicastRemoteObject {
 	}
 	
 	/**
-	 * Lähettää palvelimelle kyselyn prosessin tilasta
+	 * Lï¿½hettï¿½ï¿½ palvelimelle kyselyn prosessin tilasta
 	 * @return prosessin tila
 	 * @throws RemoteException
 	 */
@@ -107,8 +109,8 @@ public class ProcessClient extends UnicastRemoteObject {
 	}
 	
 	/**
-	 * Lähettää kirjautumistiedot (pelkkä nimi) palvelimelle hyväksyttäväksi.
-	 * @param name käyttäjän nimi
+	 * Lï¿½hettï¿½ï¿½ kirjautumistiedot (pelkkï¿½ nimi) palvelimelle hyvï¿½ksyttï¿½vï¿½ksi.
+	 * @param name kï¿½yttï¿½jï¿½n nimi
 	 * @return true jos kirjautuminen onnistuu, muuten false
 	 */
 	public boolean login(String name) {

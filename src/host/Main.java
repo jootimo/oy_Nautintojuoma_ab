@@ -1,28 +1,32 @@
 package host;
 
+import java.rmi.Remote;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
+import host.ProcessServer;
+import host.ProcessImplementation;
+
 /**
- * Palvelinpuolen käynnistys ja aloitus
+ * Palvelinpuolen kï¿½ynnistys ja aloitus
  */
 public class Main {
 
 	/**
-	 * Luo prosessin ja liittää sen RMIregistryyn asiakkaiden saataville.
+	 * Luo prosessin ja liittï¿½ï¿½ sen RMIregistryyn asiakkaiden saataville.
 	 * @param args komentoriviargumentit
 	 */
     public static void main(String[] args) {
            try {
-        	   //Luodaan etäolio ja sille viittaus palvelimeen
+        	   //Luodaan etï¿½olio ja sille viittaus palvelimeen
                Process process = new ProcessImplementation(new ProcessServer());
-               //viedään "tynkä" asiakkaiden saataville
+               //viedï¿½ï¿½n "tynkï¿½" asiakkaiden saataville
                Process stub =
-                   (Process) UnicastRemoteObject.exportObject(process, 0);
+                   (Process) UnicastRemoteObject.exportObject((Remote)process, 0);
                //luodaan rekisteri
                Registry registry = LocateRegistry.createRegistry(1099);
-               //nimetään tynkä Processiksi
+               //nimetï¿½ï¿½n tynkï¿½ Processiksi
                registry.rebind("Process", stub);
                System.out.println("Process bound");
            } catch (Exception e) {

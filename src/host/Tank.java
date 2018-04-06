@@ -4,33 +4,33 @@ package host;
 import java.io.Serializable;
 
 /**
- * Kypsytyssäiliötä kuvaava luokka
+ * Kypsytyssï¿½iliï¿½tï¿½ kuvaava luokka
  */
 public class Tank extends Thread implements Serializable{
   /*
    * Luokan Tank parametrit:
-   * varattu: Ilmaisee, onko kyseessä oleva laite varattu. (true = varattu, false = vapaa)
-   * tilavuus: Ilmaisee, kuinka paljon nestettä laitteessa on litroissa. (max. 10000 l)
-   * käyttäjä: Ilmaisee laitteen senhetkisen käyttäjän.
+   * varattu: Ilmaisee, onko kyseessï¿½ oleva laite varattu. (true = varattu, false = vapaa)
+   * tilavuus: Ilmaisee, kuinka paljon nestettï¿½ laitteessa on litroissa. (max. 10000 l)
+   * kï¿½yttï¿½jï¿½: Ilmaisee laitteen senhetkisen kï¿½yttï¿½jï¿½n.
    */
   private boolean varattu;
   private int tilavuus; 
-  private String käyttäjä;
+  private String kayttaja;
   
   /*
    * Luokan Tank konstruktori:
-   * Määrittää laitteen aloitusarvot (oletuksena tyhjä).
+   * Mï¿½ï¿½rittï¿½ï¿½ laitteen aloitusarvot (oletuksena tyhjï¿½).
    */
   public Tank() {
     varattu = false;
     tilavuus = 0;
-    käyttäjä = "";
+    kayttaja = "";
 
   }
   
   /*
    * Luokan Tank getterit ja setterit:
-   * HUOM! tilavuus-parametrin set-metodi ollaan korvattu lisää- ja vähennä-metodilla.
+   * HUOM! tilavuus-parametrin set-metodi ollaan korvattu lisï¿½ï¿½- ja vï¿½hennï¿½-metodilla.
    */
   protected boolean getVarattu() {
     return varattu;
@@ -43,7 +43,7 @@ public class Tank extends Thread implements Serializable{
     return tilavuus;
   }
   
-  protected boolean lisää(int juoma) {
+  protected boolean lisaa(int juoma) {
     if (juoma <= 10000) {
       this.tilavuus = juoma;
       return true;
@@ -52,7 +52,7 @@ public class Tank extends Thread implements Serializable{
       return false;
     }
   }
-  protected boolean vähennä(int juoma) {
+  protected boolean vahenna(int juoma) {
     if (this.tilavuus - juoma >= 0) {
       this.tilavuus -= juoma;
       System.out.println("Pumping from tank: " + juoma);
@@ -63,16 +63,16 @@ public class Tank extends Thread implements Serializable{
     }
   }
   
-  protected String getKäyttäjä() {
-    return käyttäjä;
+  protected String getKayttaja() {
+    return kayttaja;
   }
-  protected void setKäyttäjä(String käyttäjä) {
-    this.käyttäjä = käyttäjä;
-    if(!käyttäjä.equals("")) System.out.println("Tank reserved for " + käyttäjä);
+  protected void setKayttaja(String kayttaja) {
+    this.kayttaja = kayttaja;
+    if(!kayttaja.equals("")) System.out.println("Tank reserved for " + kayttaja);
     else System.out.println("Tank freed up");
   }
   
   /* 
-  * Tank-tyyppiset laitteet eivät tarvitse run-metodia.
+  * Tank-tyyppiset laitteet eivï¿½t tarvitse run-metodia.
   */
 }

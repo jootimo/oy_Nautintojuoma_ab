@@ -9,22 +9,22 @@ import java.io.Serializable;
 public class Pump extends Thread implements Serializable{
   /*
    * Luokan Pump parametrit:
-   * varattu: Ilmaisee, onko kyseessä oleva laite varattu. (true = varattu, false = vapaa)
-   * siirtonopeus: Ilmaisee, kuinka nopeasti laite pystyy kuljettamaan nestettä. (litraa/s)
-   * käyttäjä: Ilmaisee laitteen senhetkisen käyttäjän.
+   * varattu: Ilmaisee, onko kyseessï¿½ oleva laite varattu. (true = varattu, false = vapaa)
+   * siirtonopeus: Ilmaisee, kuinka nopeasti laite pystyy kuljettamaan nestettï¿½. (litraa/s)
+   * kï¿½yttï¿½jï¿½: Ilmaisee laitteen senhetkisen kï¿½yttï¿½jï¿½n.
    */
   private boolean varattu;
   private int siirtonopeus; // l/s
-  private String käyttäjä;
+  private String kayttaja;
   
   /*
    * Luokan Pump konstruktori:
-   * Määrittää laitteen aloitusarvot. Siirtonopeus tehtävänannosta.
+   * Mï¿½ï¿½rittï¿½ï¿½ laitteen aloitusarvot. Siirtonopeus tehtï¿½vï¿½nannosta.
    */
   public Pump() {
     varattu = false;
     siirtonopeus = 500;
-    käyttäjä = "";
+    kayttaja = "";
 
   }
   
@@ -45,21 +45,21 @@ public class Pump extends Thread implements Serializable{
     this.siirtonopeus = siirtonopeus;
   }
   
-  protected String getKäyttäjä() {
-    return käyttäjä;
+  protected String getKayttaja() {
+    return kayttaja;
   }
-  protected void setKäyttäjä(String käyttäjä) {
-    this.käyttäjä = käyttäjä;
+  protected void setKayttaja(String kayttaja) {
+    this.kayttaja = kayttaja;
   }
   
    /*
-   * Run-metodi mallintaa aikaa, jonka Pump-laite veisi siirtäessään nestettä.
-   * Se myös huolehtii itsensä "vapauttamisesta" muille käyttäjille suorituksensa loppuvaiheessa.
+   * Run-metodi mallintaa aikaa, jonka Pump-laite veisi siirtï¿½essï¿½ï¿½n nestettï¿½.
+   * Se myï¿½s huolehtii itsensï¿½ "vapauttamisesta" muille kï¿½yttï¿½jille suorituksensa loppuvaiheessa.
    */
-  public void run(int määrä) {
+  public void run(int maara) {
     try{
-      System.out.println("Pump Started, amount: " + määrä);
-      Thread.sleep((määrä/this.siirtonopeus) * 1000);
+      System.out.println("Pump Started, amount: " + maara);
+      Thread.sleep((maara/this.siirtonopeus) * 1000);
       varattu = false;
       System.out.println("Pump finished");
     }

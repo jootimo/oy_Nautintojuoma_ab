@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 /**
- * Käyttöliittymä
+ * Kï¿½yttï¿½liittymï¿½
  * @author jaanle
  */
 public class MainWindow extends javax.swing.JFrame {
@@ -26,7 +26,7 @@ public class MainWindow extends javax.swing.JFrame {
      * Luo edustajaolion, jolla kommunikoidaan palvelimen kanssa.
      */
     public MainWindow() {
-        //liitetään ProcessClient käyttöliittymään
+        //liitetï¿½ï¿½n ProcessClient kï¿½yttï¿½liittymï¿½ï¿½n
     	try {
 			pc = new ProcessClient();
 		} catch (RemoteException e) {
@@ -46,17 +46,17 @@ public class MainWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-    	processorRunning = new javax.swing.ImageIcon(getClass().getResource("/icons/processorRunning.jpg")); 
-        processorLoaded = new javax.swing.ImageIcon(getClass().getResource("/icons/processorLoaded.jpg"));
-    	processor = new javax.swing.ImageIcon(getClass().getResource("/icons/processor.jpg"));
-    	conveyor = new javax.swing.ImageIcon(getClass().getResource("/icons/conveyor.jpg"));
-        conveyorRunning = new javax.swing.ImageIcon(getClass().getResource("/icons/conveyorRunning.jpg"));
-        silo = new javax.swing.ImageIcon(getClass().getResource("/icons/silo.jpg"));
-        siloLoaded = new javax.swing.ImageIcon(getClass().getResource("/icons/siloLoaded.jpg"));
-        tank = new javax.swing.ImageIcon(getClass().getResource("/icons/tank.jpg"));
-        tankLoaded = new javax.swing.ImageIcon(getClass().getResource("/icons/tankLoaded.jpg"));
-        pump = new javax.swing.ImageIcon(getClass().getResource("/icons/pump.jpg"));
-        pumpRunning = new javax.swing.ImageIcon(getClass().getResource("/icons/pumpRunning.jpg"));
+    	processorRunning = new javax.swing.ImageIcon(getClass().getResource("icons/processorRunning.jpg"));
+        processorLoaded = new javax.swing.ImageIcon(getClass().getResource("icons/processorLoaded.jpg"));
+    	processor = new javax.swing.ImageIcon(getClass().getResource("icons/processor.jpg"));
+    	conveyor = new javax.swing.ImageIcon(getClass().getResource("icons/conveyor.jpg"));
+        conveyorRunning = new javax.swing.ImageIcon(getClass().getResource("icons/conveyorRunning.jpg"));
+        silo = new javax.swing.ImageIcon(getClass().getResource("icons/silo.jpg"));
+        siloLoaded = new javax.swing.ImageIcon(getClass().getResource("icons/siloLoaded.jpg"));
+        tank = new javax.swing.ImageIcon(getClass().getResource("icons/tank.jpg"));
+        tankLoaded = new javax.swing.ImageIcon(getClass().getResource("icons/tankLoaded.jpg"));
+        pump = new javax.swing.ImageIcon(getClass().getResource("icons/pump.jpg"));
+        pumpRunning = new javax.swing.ImageIcon(getClass().getResource("icons/pumpRunning.jpg"));
     	
     	
         siloPanel = new javax.swing.JPanel();
@@ -987,7 +987,7 @@ public class MainWindow extends javax.swing.JFrame {
         );
 
         procLoadLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        procLoadLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/conveyor.jpg"))); // NOI18N
+        procLoadLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("icons/conveyor.jpg"))); // NOI18N
         procLoadLabel1.setText("Processor loading");
         procLoadLabel1.setFocusable(false);
         procLoadLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -1147,7 +1147,7 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     private void signInActionPerformed(java.awt.event.ActionEvent evt) {
-        // Nimi hyväksytään jos palvelin sanoo true
+        // Nimi hyvï¿½ksytï¿½ï¿½n jos palvelin sanoo true
     	String name = userName.getText();
     	if (pc.login(name)) pc.setName(name);
     	
@@ -1314,8 +1314,8 @@ public class MainWindow extends javax.swing.JFrame {
     
     /**
      * Asettaa laitteelle statustekstin
-     * @param label muutettava tekstikenttä
-     * @param b true, jos laite on käytössä, muuten false
+     * @param label muutettava tekstikenttï¿½
+     * @param b true, jos laite on kï¿½ytï¿½ssï¿½, muuten false
      */
     private void setStatus(javax.swing.JLabel label, boolean b){
     	if(b){
@@ -1326,8 +1326,8 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     /**
-     * Asettaa käyttöliittymäelementille tekstin
-     * @param label käyttöliittymäelementti
+     * Asettaa kï¿½yttï¿½liittymï¿½elementille tekstin
+     * @param label kï¿½yttï¿½liittymï¿½elementti
      * @param text asetettava teksti
      */
     private void setText(javax.swing.JLabel label, String text){
@@ -1335,7 +1335,7 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     /**
-     * Päivittää painikkeet ja statustekstit palvelimelta saadun tilaolion mukaisesti
+     * Pï¿½ivittï¿½ï¿½ painikkeet ja statustekstit palvelimelta saadun tilaolion mukaisesti
      */
     private void update(){
     	ProcessState state = pc.getState();
@@ -1565,7 +1565,7 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     /**
-     * Hakee palvelimelta viittauksen tilaolioon ja aloittaa säikeen, joka päivittää ikkunan tilan perusteella sekunnin välein.
+     * Hakee palvelimelta viittauksen tilaolioon ja aloittaa sï¿½ikeen, joka pï¿½ivittï¿½ï¿½ ikkunan tilan perusteella sekunnin vï¿½lein.
      */
     public void updaterThread(){
     	Thread t = new Thread(){
@@ -1626,10 +1626,10 @@ public class MainWindow extends javax.swing.JFrame {
         
     }
 
-    //Käyttöliittymään liittyvä asiakas
+    //Kï¿½yttï¿½liittymï¿½ï¿½n liittyvï¿½ asiakas
     private ProcessClient pc;
    
-    //Käyttöliittymän kuvat
+    //Kï¿½yttï¿½liittymï¿½n kuvat
     private ImageIcon processorLoaded;
     private ImageIcon processorRunning;
     private ImageIcon processor;

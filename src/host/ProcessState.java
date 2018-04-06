@@ -3,7 +3,7 @@ package host;
 import java.io.Serializable;
 
 /**
- * Tämä luokka kuvaa prosessin tilaa. Sisältää metodit varaustilanteen, käynnissäolon ja käyttäjän tarkasteluun. 
+ * Tama luokka kuvaa prosessin tilaa. Sisaltaa metodit varaustilanteen, kaynnissaolon ja kayttajan tarkasteluun. 
  */
 public class ProcessState implements Serializable {
 
@@ -84,19 +84,19 @@ public class ProcessState implements Serializable {
 		return silo4.getVarattu();
 	}
 	public boolean isSilo1Empty() {
-		if (silo1.getTäyttöaste() == 0) return true;
+		if (silo1.getTayttoaste() == 0) return true;
 		return false;
 	}
 	public boolean isSilo2Empty() {
-		if (silo2.getTäyttöaste() == 0) return true;
+		if (silo2.getTayttoaste() == 0) return true;
 		return false;
 	}
 	public boolean isSilo3Empty() {
-		if (silo3.getTäyttöaste() == 0) return true;
+		if (silo3.getTayttoaste() == 0) return true;
 		return false;
 	}
 	public boolean isSilo24Empty() {
-		if (silo4.getTäyttöaste() == 0) return true;
+		if (silo4.getTayttoaste() == 0) return true;
 		return false;
 	}
 
@@ -128,15 +128,15 @@ public class ProcessState implements Serializable {
 		return proc3.getRunning();
 	}
 	public boolean isProc1Empty(){
-		if (proc1.getJuoma() == 0 && proc1.getKiinteä() == 0) return true;
+		if (proc1.getJuoma() == 0 && proc1.getKiintea() == 0) return true;
 		return false;
 	}
 	public boolean isProc2Empty(){
-		if (proc2.getJuoma() == 0 && proc2.getKiinteä() == 0) return true;
+		if (proc2.getJuoma() == 0 && proc2.getKiintea() == 0) return true;
 		return false;
 	}
 	public boolean isProc3Empty(){
-		if (proc3.getJuoma() == 0 && proc3.getKiinteä() == 0) return true;
+		if (proc3.getJuoma() == 0 && proc3.getKiintea() == 0) return true;
 		return false;
 	}
 	
@@ -220,27 +220,27 @@ public class ProcessState implements Serializable {
 
 	
 	public String getProc1User(){
-		return proc1.getKäyttäjä();
+		return proc1.getKayttaja();
 	}
 	public String getProc2User(){
-		return proc2.getKäyttäjä();
+		return proc2.getKayttaja();
 	}
 	public String getProc3User(){
-		return proc3.getKäyttäjä();
+		return proc3.getKayttaja();
 	}
 	
 	
 	public int getSilo1Amount(){
-		return silo1.getTäyttöaste();
+		return silo1.getTayttoaste();
 	}
 	public int getSilo2Amount(){
-		return silo2.getTäyttöaste();
+		return silo2.getTayttoaste();
 	}
 	public int getSilo3Amount(){
-		return silo3.getTäyttöaste();
+		return silo3.getTayttoaste();
 	}
 	public int getSilo4Amount(){
-		return silo4.getTäyttöaste();
+		return silo4.getTayttoaste();
 	}		
 
 }

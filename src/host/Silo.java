@@ -9,27 +9,27 @@ import java.io.Serializable;
 public class Silo extends Thread implements Serializable{
   /*
    * Luokan Silo parametrit:
-   * varattu: Ilmaisee, onko kyseessä oleva laite varattu. (true = varattu, false = vapaa)
-   * täyttöaste: Ilmaisee, kuinka paljon raaka-ainetta laitteessa on kilogrammoissa. (max. 10000 kg)
-   * käyttäjä: Ilmaisee laitteen senhetkisen käyttäjän.
+   * varattu: Ilmaisee, onko kyseessï¿½ oleva laite varattu. (true = varattu, false = vapaa)
+   * tï¿½yttï¿½aste: Ilmaisee, kuinka paljon raaka-ainetta laitteessa on kilogrammoissa. (max. 10000 kg)
+   * kï¿½yttï¿½jï¿½: Ilmaisee laitteen senhetkisen kï¿½yttï¿½jï¿½n.
    */
   private boolean varattu;
-  private int täyttöaste; 
-  private String käyttäjä;
+  private int tayttoaste;
+  private String kayttaja;
   
   /*
    * Luokan Silo konstruktori:
-   * Määrittää laitteen aloitusarvot (oletuksena tyhjä).
+   * Mï¿½ï¿½rittï¿½ï¿½ laitteen aloitusarvot (oletuksena tyhjï¿½).
    */
   public Silo() {
-    täyttöaste = 0;
+    tayttoaste = 0;
     varattu = false;
-    käyttäjä = "";
+    kayttaja = "";
   }
   
   /*
    * Luokan Pump getterit ja setterit:
-   * HUOM! täyttöasteen set-metodi ollaan korvattu lisää- ja vähennä-metodilla.
+   * HUOM! tï¿½yttï¿½asteen set-metodi ollaan korvattu lisï¿½ï¿½- ja vï¿½hennï¿½-metodilla.
    */
   protected boolean getVarattu() {
     return varattu;
@@ -38,21 +38,21 @@ public class Silo extends Thread implements Serializable{
     this.varattu = varattu;
   }
   
-  protected int getTäyttöaste() {
-    return täyttöaste;
+  protected int getTayttoaste() {
+    return tayttoaste;
   }
-  protected boolean lisääTäyttöaste(int täyttöaste) {
-    if (this.täyttöaste + täyttöaste <= 10000) {
-      this.täyttöaste += täyttöaste;
+  protected boolean lisaaTayttoaste(int tayttoaste) {
+    if (this.tayttoaste + tayttoaste <= 10000) {
+      this.tayttoaste += tayttoaste;
       return true;
     }
     else {
       return false;
     }
   }
-  protected boolean vähennäTäyttöaste(int täyttöaste) {
-    if (this.täyttöaste - täyttöaste >= 0) {
-      this.täyttöaste -= täyttöaste;
+  protected boolean vahennaTayttoaste(int tayttoaste) {
+    if (this.tayttoaste - tayttoaste >= 0) {
+      this.tayttoaste -= tayttoaste;
       return true;
     }
     else {
@@ -60,15 +60,15 @@ public class Silo extends Thread implements Serializable{
     }
   }
   
-  protected String getKäyttäjä() {
-    return käyttäjä;
+  protected String getKayttaja() {
+    return kayttaja;
   }
-  protected void setKäyttäjä(String käyttäjä) {
-    this.käyttäjä = käyttäjä;
-    System.out.println("Silo reserved for " + käyttäjä);
+  protected void setKayttaja(String kayttaja) {
+    this.kayttaja = kayttaja;
+    System.out.println("Silo reserved for " + kayttaja);
   }
   
  /* 
-  * Silo-tyyppiset laitteet eivät tarvitse run-metodia.
+  * Silo-tyyppiset laitteet eivï¿½t tarvitse run-metodia.
   */
 }

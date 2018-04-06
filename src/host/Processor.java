@@ -3,43 +3,43 @@ package host;
 import java.io.Serializable;
 
 /**
- * Juomakeitintä kuvaava luokka
+ * Juomakeitintï¿½ kuvaava luokka
  */
 public class Processor extends Thread implements Serializable{
   /*
    * Luokan Processor parametrit:
-   * varattu: Ilmaisee, onko kyseessä oleva laite varattu. (true = varattu, false = vapaa)
-   * vesi: Ilmaisee laitteessa olevan veden määrän litroissa. (max. 10000 litraa!)
-   * kiinteä: Ilmaisee laitteessa olevan kiinteän raaka-aineen määrän kilogrammoissa. (max. 2000 kg!)
-   * juoma: Ilmaisee laitteessa olevan valmiin juoman määrän litroissa. (max. 10000 litraa!)
+   * varattu: Ilmaisee, onko kyseessï¿½ oleva laite varattu. (true = varattu, false = vapaa)
+   * vesi: Ilmaisee laitteessa olevan veden mï¿½ï¿½rï¿½n litroissa. (max. 10000 litraa!)
+   * kiinteï¿½: Ilmaisee laitteessa olevan kiinteï¿½n raaka-aineen mï¿½ï¿½rï¿½n kilogrammoissa. (max. 2000 kg!)
+   * juoma: Ilmaisee laitteessa olevan valmiin juoman mï¿½ï¿½rï¿½n litroissa. (max. 10000 litraa!)
    * keittoaika: Ilmaisee laitteen tarvitseman ajan juoman valmistukseen sekunneissa.
-   * käyttäjä: Ilmaisee laitteen senhetkisen käyttäjän.
+   * kï¿½yttï¿½jï¿½: Ilmaisee laitteen senhetkisen kï¿½yttï¿½jï¿½n.
    */
   private boolean varattu;
   private boolean running;
   private int vesi; 
-  private int kiinteä; 
+  private int kiintea;
   private int juoma; 
   private int keittoaika; 
-  private String käyttäjä;
+  private String kayttaja;
   
   /*
    * Luokan Processor konstruktori:
-   * Määrittää laitteen aloitusarvot (laite aloittaa "tyhjänä"). Keittoaika tehtävänannosta.
+   * Mï¿½ï¿½rittï¿½ï¿½ laitteen aloitusarvot (laite aloittaa "tyhjï¿½nï¿½"). Keittoaika tehtï¿½vï¿½nannosta.
    */
   public Processor() {
     varattu = false;
     running = false;
     vesi = 0;
-    kiinteä = 0;
+    kiintea = 0;
     juoma = 0;
     keittoaika = 20;
-    käyttäjä = "";
+    kayttaja = "";
   }
   
   /*
    * Luokan Processor getterit ja setterit:
-   * (HUOM! setVesi- ja setKiinteä-metodien lisäksi luodaan myös selkeytyssyistä metodit lisääVesi ja lisääKiinteä,
+   * (HUOM! setVesi- ja setKiinteï¿½-metodien lisï¿½ksi luodaan myï¿½s selkeytyssyistï¿½ metodit lisï¿½ï¿½Vesi ja lisï¿½ï¿½Kiinteï¿½,
    * jotka korvaamisen sijaan kasvattavat laitteessa olevaa parametria.)
    */
   protected boolean getVarattu() {
@@ -59,7 +59,7 @@ public class Processor extends Thread implements Serializable{
   protected int getVesi() {
     return vesi;
   }
-  protected boolean lisääVesi(int vesi) {
+  protected boolean lisaaVesi(int vesi) {
     if ((this.vesi + vesi) <= 10000) {
       this.vesi += vesi;
       return true;
@@ -78,21 +78,21 @@ public class Processor extends Thread implements Serializable{
     }
   }
   
-  protected int getKiinteä() {
-    return kiinteä;
+  protected int getKiintea() {
+    return kiintea;
   }
-  protected boolean lisääKiinteä(int kiinteä) {
-    if ((this.kiinteä + kiinteä) <= 2000) {
-      this.kiinteä += kiinteä;
+  protected boolean lisaaKiintea(int kiintea) {
+    if ((this.kiintea + kiintea) <= 2000) {
+      this.kiintea += kiintea;
       return true;
     }
     else {
       return false;
     }
   }
-  protected boolean setKiinteä(int kiinteä) {
-    if (kiinteä <= 2000) {
-      this.kiinteä = kiinteä;
+  protected boolean setKiintea(int kiintea) {
+    if (kiintea <= 2000) {
+      this.kiintea = kiintea;
       return true;
     }
     else {
@@ -104,7 +104,7 @@ public class Processor extends Thread implements Serializable{
     return juoma;
   }
   protected boolean setJuoma(int juoma) {
-    if ((juoma <= 10000) && (this.vesi == 0) && (this.kiinteä == 0)) {
+    if ((juoma <= 10000) && (this.vesi == 0) && (this.kiintea == 0)) {
       this.juoma = juoma; // Aikaisempi juoma menee hukkaan - Ei haluta sekoittaa vanhaa juomaa uuteen!
       return true;
     }
@@ -123,19 +123,19 @@ public class Processor extends Thread implements Serializable{
     this.keittoaika = keittoaika;
   }
   
-  protected String getKäyttäjä() {
-    return käyttäjä;
+  protected String getKayttaja() {
+    return kayttaja;
   }
-  protected void setKäyttäjä(String käyttäjä) {
-	this.käyttäjä = käyttäjä;
-    if(!käyttäjä.equals("")) System.out.println("Processor reserved for " + käyttäjä);
+  protected void setKayttaja(String kayttaja) {
+	this.kayttaja = kayttaja;
+    if(!kayttaja.equals("")) System.out.println("Processor reserved for " + kayttaja);
     else System.out.println("Processor freed up");
   }
   
   /*
-   * Run-metodi odottaa Processorin eli juomakeittimen keitosvaiheen loppuun (tehtävänanto: 20s), ja sen jälkeen muuttaa
-   * laitteen vesi- ja kiinteä-parametrit nolliksi. juoma-parametri saa arvokseen keittimessä olleen veden määrän.
-   * Lopuksi keitin ilmoittaa, että se ei ole enää käynnissä.
+   * Run-metodi odottaa Processorin eli juomakeittimen keitosvaiheen loppuun (tehtï¿½vï¿½nanto: 20s), ja sen jï¿½lkeen muuttaa
+   * laitteen vesi- ja kiinteï¿½-parametrit nolliksi. juoma-parametri saa arvokseen keittimessï¿½ olleen veden mï¿½ï¿½rï¿½n.
+   * Lopuksi keitin ilmoittaa, ettï¿½ se ei ole enï¿½ï¿½ kï¿½ynnissï¿½.
    */
   public void run() {
     try{
@@ -143,7 +143,7 @@ public class Processor extends Thread implements Serializable{
       Thread.sleep(this.getKeittoaikaMs());
       int temp = this.getVesi();
       setVesi(0);
-      setKiinteä(0);
+      setKiintea(0);
       setJuoma(temp);
       running = false;
       System.out.println("Processor Finised");

@@ -10,22 +10,22 @@ import java.io.Serializable;
 public class Conveyor extends Thread implements Serializable{
   /*
    * Luokan Conveyor parametrit:
-   * varattu: Ilmaisee, onko kyseessä oleva laite varattu. (true = varattu, false = vapaa)
+   * varattu: Ilmaisee, onko kyseessï¿½ oleva laite varattu. (true = varattu, false = vapaa)
    * siirtonopeus: Ilmaisee, kuinka nopeasti laite pystyy kuljettamaan raaka-ainetta. (kg/s)
-   * käyttäjä: Ilmaisee laitteen senhetkisen käyttäjän.
+   * kï¿½yttï¿½jï¿½: Ilmaisee laitteen senhetkisen kï¿½yttï¿½jï¿½n.
    */
   private boolean varattu;
   private int siirtonopeus; 
-  private String käyttäjä;
+  private String kayttaja;
   
   /*
    * Luokan Conveyor konstruktori:
-   * Määrittää laitteen aloitusarvot. Siirtonopeus tehtävänannosta.
+   * Mï¿½ï¿½rittï¿½ï¿½ laitteen aloitusarvot. Siirtonopeus tehtï¿½vï¿½nannosta.
    */
   public Conveyor() {
     varattu = false;
     siirtonopeus = 200;
-    käyttäjä = ""; 
+    kayttaja = "";
 
   }
   
@@ -46,21 +46,21 @@ public class Conveyor extends Thread implements Serializable{
     this.siirtonopeus = siirtonopeus;
   }
   
-  protected String getKäyttäjä() {
-    return käyttäjä;
+  protected String getKayttaja() {
+    return kayttaja;
   }
-  protected void setKäyttäjä(String käyttäjä) {
-    this.käyttäjä = käyttäjä;
+  protected void setKayttaja(String kayttaja) {
+    this.kayttaja = kayttaja;
   }
   
   /*
-   * Run-metodi mallintaa aikaa, jonka Conveyor-laite veisi siirtäessään raaka-ainetta.
-   * Se myös huolehtii itsensä "vapauttamisesta" muille käyttäjille suorituksensa loppuvaiheessa.
+   * Run-metodi mallintaa aikaa, jonka Conveyor-laite veisi siirtï¿½essï¿½ï¿½n raaka-ainetta.
+   * Se myï¿½s huolehtii itsensï¿½ "vapauttamisesta" muille kï¿½yttï¿½jille suorituksensa loppuvaiheessa.
    */
-  public void run(int määrä) {
+  public void run(int maara) {
     try{
-      System.out.println("Conveyor Started, amount: " + määrä);
-      Thread.sleep((määrä/this.siirtonopeus) * 1000);
+      System.out.println("Conveyor Started, amount: " + maara);
+      Thread.sleep((maara/this.siirtonopeus) * 1000);
       varattu = false;
       System.out.println("Conveyor finished");
     }
