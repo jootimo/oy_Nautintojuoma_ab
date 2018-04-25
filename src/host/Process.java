@@ -4,34 +4,34 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 /**
- * Etäolion rajapinta
+ * Etï¿½olion rajapinta
  */
 public interface Process extends Remote{
 	
 	/**
-	 * Varaa palvelimelta laitteen asiakkaan käyttöön.
-	 * @param laitteenNimi varattava laite
-	 * @param asiakas varauspyynnön lähettäjä
+	 * Varaa palvelimelta laitteen asiakkaan kï¿½yttï¿½ï¿½n.
+	 * @param deviceName varattava laite
+	 * @param user varauspyynnï¿½n lï¿½hettï¿½jï¿½
 	 * @throws RemoteException virhe RMI-kutsussa
 	 */
-	public void reserve(String laitteenNimi, String asiakas) throws RemoteException;  
+	public void reserve(String deviceName, String user) throws RemoteException;
 	
 	/**
-	 * Pyytää palvelinta käynnistämään laitteen
-	 * @param laitteenNimi käynnistettävä laite
-	 * @param asiakas käynnistyspyynnön lähettäjä
+	 * Pyytï¿½ï¿½ palvelinta kï¿½ynnistï¿½mï¿½ï¿½n laitteen
+	 * @param deviceName kï¿½ynnistettï¿½vï¿½ laite
+	 * @param user kï¿½ynnistyspyynnï¿½n lï¿½hettï¿½jï¿½
 	 * @throws RemoteException virhe RMI-kutsussa
 	 */
-	public void start(String laitteenNimi, String asiakas) throws RemoteException;
+	public void start(String deviceName, String user) throws RemoteException;
 	
 	/**
-	 * Pyytää palvelinta käynnistämään ruuvikuljettimen asiakkaan määrittämällä määrällä
-	 * @param laitteenNimi käynnistettävä laite
-	 * @param asiakas käynnistyspyynnön lähettäjä
-	 * @param amount siirrettävä määrä
+	 * Pyytï¿½ï¿½ palvelinta kï¿½ynnistï¿½mï¿½ï¿½n ruuvikuljettimen asiakkaan mï¿½ï¿½rittï¿½mï¿½llï¿½ mï¿½ï¿½rï¿½llï¿½
+	 * @param deviceName kï¿½ynnistettï¿½vï¿½ laite
+	 * @param user kï¿½ynnistyspyynnï¿½n lï¿½hettï¿½jï¿½
+	 * @param amount siirrettï¿½vï¿½ mï¿½ï¿½rï¿½
 	 * @throws RemoteException virhe RMI-kutsussa
 	 */
-	public void start(String laitteenNimi, String asiakas, int amount) throws RemoteException;
+	public void start(String deviceName, String user, int amount) throws RemoteException;
 	
 	/**
 	 * Palauttaa asiakkaalle prosessin tilaa kuvaavan olion.
@@ -41,8 +41,8 @@ public interface Process extends Remote{
 	public ProcessState getState() throws RemoteException;
 	
 	/**
-	 * Kirjaa käyttäjän palvelimelle
-	 * @param name käyttäjän nimi
+	 * Kirjaa kï¿½yttï¿½jï¿½n palvelimelle
+	 * @param name kï¿½yttï¿½jï¿½n nimi
 	 * @return yksinkertaisuuden vuoksi aina true
 	 * @throws RemoteException virhe RMI-kutsussa
 	 */

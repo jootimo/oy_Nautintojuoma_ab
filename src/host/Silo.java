@@ -9,50 +9,50 @@ import java.io.Serializable;
 public class Silo extends Thread implements Serializable{
   /*
    * Luokan Silo parametrit:
-   * varattu: Ilmaisee, onko kyseess� oleva laite varattu. (true = varattu, false = vapaa)
+   * reserved: Ilmaisee, onko kyseess� oleva laite reserved. (true = reserved, false = vapaa)
    * t�ytt�aste: Ilmaisee, kuinka paljon raaka-ainetta laitteessa on kilogrammoissa. (max. 10000 kg)
    * k�ytt�j�: Ilmaisee laitteen senhetkisen k�ytt�j�n.
    */
-  private boolean varattu;
-  private int tayttoaste;
-  private String kayttaja;
+  private boolean reserved;
+  private int fill;
+  private String user;
   
   /*
    * Luokan Silo konstruktori:
    * M��ritt�� laitteen aloitusarvot (oletuksena tyhj�).
    */
   public Silo() {
-    tayttoaste = 0;
-    varattu = false;
-    kayttaja = "";
+    fill = 0;
+    reserved = false;
+    user = "";
   }
   
   /*
    * Luokan Pump getterit ja setterit:
    * HUOM! t�ytt�asteen set-metodi ollaan korvattu lis��- ja v�henn�-metodilla.
    */
-  protected boolean getVarattu() {
-    return varattu;
+  protected boolean getReserved() {
+    return reserved;
   }
-  protected void setVarattu(boolean varattu) {
-    this.varattu = varattu;
+  protected void setReserved(boolean reserved) {
+    this.reserved = reserved;
   }
   
-  protected int getTayttoaste() {
-    return tayttoaste;
+  protected int getFill() {
+    return fill;
   }
-  protected boolean lisaaTayttoaste(int tayttoaste) {
-    if (this.tayttoaste + tayttoaste <= 10000) {
-      this.tayttoaste += tayttoaste;
+  protected boolean addFill(int fill) {
+    if (this.fill + fill <= 10000) {
+      this.fill += fill;
       return true;
     }
     else {
       return false;
     }
   }
-  protected boolean vahennaTayttoaste(int tayttoaste) {
-    if (this.tayttoaste - tayttoaste >= 0) {
-      this.tayttoaste -= tayttoaste;
+  protected boolean decreaseFill(int fill) {
+    if (this.fill - fill >= 0) {
+      this.fill -= fill;
       return true;
     }
     else {
@@ -60,12 +60,12 @@ public class Silo extends Thread implements Serializable{
     }
   }
   
-  protected String getKayttaja() {
-    return kayttaja;
+  protected String getUser() {
+    return user;
   }
-  protected void setKayttaja(String kayttaja) {
-    this.kayttaja = kayttaja;
-    System.out.println("Silo reserved for " + kayttaja);
+  protected void setUser(String user) {
+    this.user = user;
+    System.out.println("Silo reserved for " + user);
   }
   
  /* 

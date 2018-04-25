@@ -3,7 +3,7 @@ package host;
 import java.rmi.RemoteException;
 
 /**
- * Etäolion toteutus
+ * Etï¿½olion toteutus
  */
 public class ProcessImplementation implements Process {
 
@@ -11,8 +11,8 @@ public class ProcessImplementation implements Process {
 	private ProcessServer server;
 
 	/**
-	 * Luo uuden etäolion ja sitoo sen palvelimeen
-	 * @param server Prosessia ylläpitävä palvelin
+	 * Luo uuden etï¿½olion ja sitoo sen palvelimeen
+	 * @param server Prosessia yllï¿½pitï¿½vï¿½ palvelin
 	 */
 	public ProcessImplementation(ProcessServer server) {
 		super();
@@ -22,9 +22,9 @@ public class ProcessImplementation implements Process {
 	/**
 	 * Varaa ko. laitteen ko. asiakkaalle
 	 */
-	public void reserve(String laitteenNimi, String asiakas) throws RemoteException { 
+	public void reserve(String deviceName, String user) throws RemoteException {
 		try {
-			server.reserve(laitteenNimi, asiakas);
+			server.reserve(deviceName, user);
 		} catch (AlreadyReservedException e) {
 			e.printStackTrace();
 		}
@@ -32,18 +32,18 @@ public class ProcessImplementation implements Process {
 	}
  
 	/**
-	 * Käynnistää ko. laitteen ko. asiakkaalle
+	 * Kï¿½ynnistï¿½ï¿½ ko. laitteen ko. asiakkaalle
 	 */
-	public void start(String laitteenNimi, String asiakas) throws RemoteException {
-		//Laitetaan testausta varten siiloihin vain 1000. Muuten kestää kauhean kauan.
-		server.start(laitteenNimi, asiakas, 1000);
+	public void start(String deviceName, String user) throws RemoteException {
+		//Laitetaan testausta varten siiloihin vain 1000. Muuten kestï¿½ï¿½ kauhean kauan.
+		server.start(deviceName, user, 1000);
 	}
  
 	/**
-	 * Käynnistää ko. laitteen ko. asiakkaalle
+	 * Kï¿½ynnistï¿½ï¿½ ko. laitteen ko. asiakkaalle
 	 */	
-	public void start(String laitteenNimi, String asiakas, int amount) throws RemoteException {
-		server.start(laitteenNimi, asiakas, amount);
+	public void start(String deviceName, String user, int amount) throws RemoteException {
+		server.start(deviceName, user, amount);
 	}
  
 	/**
@@ -54,7 +54,7 @@ public class ProcessImplementation implements Process {
 	}
  
 	/**
-	 * Kirjaa käyttäjän sisään
+	 * Kirjaa kï¿½yttï¿½jï¿½n sisï¿½ï¿½n
 	 */
 	public boolean login(String name) throws RemoteException{
 		return server.login(name);

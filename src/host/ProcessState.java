@@ -69,54 +69,54 @@ public class ProcessState implements Serializable {
 	
 	 
 	public boolean isSiloLoader() {
-		return siloLoader.getVarattu();
+		return siloLoader.getReserved();
 	}
 	public boolean isSilo1() {
-		return silo1.getVarattu();
+		return silo1.getReserved();
 	}
 	public boolean isSilo2() {
-		return silo2.getVarattu();
+		return silo2.getReserved();
 	}
 	public boolean isSilo3() {
-		return silo3.getVarattu();
+		return silo3.getReserved();
 	}
 	public boolean isSilo4() {
-		return silo4.getVarattu();
+		return silo4.getReserved();
 	}
 	public boolean isSilo1Empty() {
-		if (silo1.getTayttoaste() == 0) return true;
+		if (silo1.getFill() == 0) return true;
 		return false;
 	}
 	public boolean isSilo2Empty() {
-		if (silo2.getTayttoaste() == 0) return true;
+		if (silo2.getFill() == 0) return true;
 		return false;
 	}
 	public boolean isSilo3Empty() {
-		if (silo3.getTayttoaste() == 0) return true;
+		if (silo3.getFill() == 0) return true;
 		return false;
 	}
 	public boolean isSilo24Empty() {
-		if (silo4.getTayttoaste() == 0) return true;
+		if (silo4.getFill() == 0) return true;
 		return false;
 	}
 
 	
 	public boolean isProcLoader1() {
-		return procLoader1.getVarattu();
+		return procLoader1.getReserved();
 	}
 	public boolean isProcLoader2() {
-		return procLoader2.getVarattu();
+		return procLoader2.getReserved();
 	}
 	
 	
 	public boolean isProc1Reserved() {
-		return proc1.getVarattu();
+		return proc1.getReserved();
 	}
 	public boolean isProc2Reserved() {
-		return proc2.getVarattu();
+		return proc2.getReserved();
 	}
 	public boolean isProc3Reserved() {
-		return proc3.getVarattu();
+		return proc3.getReserved();
 	}
 	public boolean isProc1Running(){
 		return proc1.getRunning();
@@ -128,119 +128,119 @@ public class ProcessState implements Serializable {
 		return proc3.getRunning();
 	}
 	public boolean isProc1Empty(){
-		if (proc1.getJuoma() == 0 && proc1.getKiintea() == 0) return true;
+		if (proc1.getDrink() == 0 && proc1.getSolid() == 0) return true;
 		return false;
 	}
 	public boolean isProc2Empty(){
-		if (proc2.getJuoma() == 0 && proc2.getKiintea() == 0) return true;
+		if (proc2.getDrink() == 0 && proc2.getSolid() == 0) return true;
 		return false;
 	}
 	public boolean isProc3Empty(){
-		if (proc3.getJuoma() == 0 && proc3.getKiintea() == 0) return true;
+		if (proc3.getDrink() == 0 && proc3.getSolid() == 0) return true;
 		return false;
 	}
 	
 	
 	public boolean isPump1() {
-		return pump1.getVarattu();
+		return pump1.getReserved();
 	}
 	public boolean isPump2() {
-		return pump2.getVarattu();
+		return pump2.getReserved();
 	}
 	
 	
 	public boolean isTank1() {
-		return tank1.getVarattu();
+		return tank1.getReserved();
 	}
 	public boolean isTank2() {
-		return tank2.getVarattu();
+		return tank2.getReserved();
 	}
 	public boolean isTank3() {
-		return tank3.getVarattu();
+		return tank3.getReserved();
 	}
 	public boolean isTank4() {
-		return tank4.getVarattu();
+		return tank4.getReserved();
 	}
 	public boolean isTank5() {
-		return tank5.getVarattu();
+		return tank5.getReserved();
 	}
 	public boolean isTank6() {
-		return tank6.getVarattu();
+		return tank6.getReserved();
 	}
 	public boolean isTank7() {
-		return tank7.getVarattu();
+		return tank7.getReserved();
 	}
 	public boolean isTank8() {
-		return tank8.getVarattu();
+		return tank8.getReserved();
 	}
 	public boolean isTank9() {
-		return tank9.getVarattu();
+		return tank9.getReserved();
 	}
 	public boolean isTank10() {
-		return tank10.getVarattu();
+		return tank10.getReserved();
 	}
 	public int getTank1Amount(){
-		return tank1.getTilavuus();
+		return tank1.getVolume();
 	}
 	public int getTank2Amount(){
-		return tank2.getTilavuus();
+		return tank2.getVolume();
 	}
 	public int getTank3Amount(){
-		return tank3.getTilavuus();
+		return tank3.getVolume();
 	}
 	public int getTank4Amount(){
-		return tank4.getTilavuus();
+		return tank4.getVolume();
 	}
 	public int getTank5Amount(){
-		return tank5.getTilavuus();
+		return tank5.getVolume();
 	}
 	public int getTank6Amount(){
-		return tank6.getTilavuus();
+		return tank6.getVolume();
 	}
 	public int getTank7Amount(){
-		return tank7.getTilavuus();
+		return tank7.getVolume();
 	}
 	public int getTank8Amount(){
-		return tank8.getTilavuus();
+		return tank8.getVolume();
 	}
 	public int getTank9Amount(){
-		return tank9.getTilavuus();
+		return tank9.getVolume();
 	}
 	public int getTank10Amount(){
-		return tank10.getTilavuus();
+		return tank10.getVolume();
 	}
 
 	
 	public boolean isBottlePump1() {
-		return bottlePump1.getVarattu();
+		return bottlePump1.getReserved();
 	}
 	public boolean isBottlePump2() {
-		return bottlePump2.getVarattu();
+		return bottlePump2.getReserved();
 	}
 
 	
 	public String getProc1User(){
-		return proc1.getKayttaja();
+		return proc1.getUser();
 	}
 	public String getProc2User(){
-		return proc2.getKayttaja();
+		return proc2.getUser();
 	}
 	public String getProc3User(){
-		return proc3.getKayttaja();
+		return proc3.getUser();
 	}
 	
 	
 	public int getSilo1Amount(){
-		return silo1.getTayttoaste();
+		return silo1.getFill();
 	}
 	public int getSilo2Amount(){
-		return silo2.getTayttoaste();
+		return silo2.getFill();
 	}
 	public int getSilo3Amount(){
-		return silo3.getTayttoaste();
+		return silo3.getFill();
 	}
 	public int getSilo4Amount(){
-		return silo4.getTayttoaste();
+		return silo4.getFill();
 	}		
 
 }

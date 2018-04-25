@@ -9,44 +9,44 @@ public class Processor extends Thread implements Serializable{
   /*
    * Luokan Processor parametrit:
    * varattu: Ilmaisee, onko kyseess� oleva laite varattu. (true = varattu, false = vapaa)
-   * vesi: Ilmaisee laitteessa olevan veden m��r�n litroissa. (max. 10000 litraa!)
+   * water: Ilmaisee laitteessa olevan veden m��r�n litroissa. (max. 10000 litraa!)
    * kiinte�: Ilmaisee laitteessa olevan kiinte�n raaka-aineen m��r�n kilogrammoissa. (max. 2000 kg!)
-   * juoma: Ilmaisee laitteessa olevan valmiin juoman m��r�n litroissa. (max. 10000 litraa!)
-   * keittoaika: Ilmaisee laitteen tarvitseman ajan juoman valmistukseen sekunneissa.
+   * drink: Ilmaisee laitteessa olevan valmiin juoman m��r�n litroissa. (max. 10000 litraa!)
+   * cookingTime: Ilmaisee laitteen tarvitseman ajan juoman valmistukseen sekunneissa.
    * k�ytt�j�: Ilmaisee laitteen senhetkisen k�ytt�j�n.
    */
-  private boolean varattu;
+  private boolean reserved;
   private boolean running;
-  private int vesi; 
-  private int kiintea;
-  private int juoma; 
-  private int keittoaika; 
-  private String kayttaja;
+  private int water;
+  private int solid;
+  private int drink;
+  private int cookingTime;
+  private String user;
   
   /*
    * Luokan Processor konstruktori:
    * M��ritt�� laitteen aloitusarvot (laite aloittaa "tyhj�n�"). Keittoaika teht�v�nannosta.
    */
   public Processor() {
-    varattu = false;
+    reserved = false;
     running = false;
-    vesi = 0;
-    kiintea = 0;
-    juoma = 0;
-    keittoaika = 20;
-    kayttaja = "";
+    water = 0;
+    solid = 0;
+    drink = 0;
+    cookingTime = 20;
+    user = "";
   }
   
   /*
    * Luokan Processor getterit ja setterit:
-   * (HUOM! setVesi- ja setKiinte�-metodien lis�ksi luodaan my�s selkeytyssyist� metodit lis��Vesi ja lis��Kiinte�,
+   * (HUOM! setWater- ja setKiinte�-metodien lis�ksi luodaan my�s selkeytyssyist� metodit lis��Vesi ja lis��Kiinte�,
    * jotka korvaamisen sijaan kasvattavat laitteessa olevaa parametria.)
    */
-  protected boolean getVarattu() {
-    return varattu;
+  protected boolean getReserved() {
+    return reserved;
   }
-  protected void setVarattu(boolean varattu) {
-    this.varattu = varattu;
+  protected void setReserved(boolean varattu) {
+    this.reserved = varattu;
   }
   
   protected boolean getRunning() {
@@ -56,43 +56,21 @@ public class Processor extends Thread implements Serializable{
 	this.running = running;
   }
   
-  protected int getVesi() {
-    return vesi;
+  protected int getWater() {
+    return water;
   }
-  protected boolean lisaaVesi(int vesi) {
-    if ((this.vesi + vesi) <= 10000) {
-      this.vesi += vesi;
+  protected boolean addWater(int water) {
+    if ((this.water + water) <= 10000) {
+      this.water += water;
       return true;
     }
     else {
       return false;
     }
   }
-  protected boolean setVesi(int vesi) {
-    if (vesi <= 10000) {
-      this.vesi = vesi;
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
-  
-  protected int getKiintea() {
-    return kiintea;
-  }
-  protected boolean lisaaKiintea(int kiintea) {
-    if ((this.kiintea + kiintea) <= 2000) {
-      this.kiintea += kiintea;
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
-  protected boolean setKiintea(int kiintea) {
-    if (kiintea <= 2000) {
-      this.kiintea = kiintea;
+  protected boolean setWater(int water) {
+    if (water <= 10000) {
+      this.water = water;
       return true;
     }
     else {
@@ -100,12 +78,21 @@ public class Processor extends Thread implements Serializable{
     }
   }
   
-  protected int getJuoma() {
-    return juoma;
+  protected int getSolid() {
+    return solid;
   }
-  protected boolean setJuoma(int juoma) {
-    if ((juoma <= 10000) && (this.vesi == 0) && (this.kiintea == 0)) {
-      this.juoma = juoma; // Aikaisempi juoma menee hukkaan - Ei haluta sekoittaa vanhaa juomaa uuteen!
+  protected boolean addSolid(int solid) {
+    if ((this.solid + solid) <= 2000) {
+      this.solid += solid;
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+  protected boolean setSolid(int solid) {
+    if (solid <= 2000) {
+      this.solid = solid;
       return true;
     }
     else {
@@ -113,38 +100,51 @@ public class Processor extends Thread implements Serializable{
     }
   }
   
-  protected int getKeittoaika() {
-    return keittoaika;
+  protected int getDrink() {
+    return drink;
   }
-  protected int getKeittoaikaMs() { // palauttaa keittoajan millisekunteina!
-    return keittoaika * 1000; 
-  }
-  protected void setKeittoaika(int keittoaika) {
-    this.keittoaika = keittoaika;
+  protected boolean setDrink(int drink) {
+    if ((drink <= 10000) && (this.water == 0) && (this.solid == 0)) {
+      this.drink = drink; // Aikaisempi drink menee hukkaan - Ei haluta sekoittaa vanhaa juomaa uuteen!
+      return true;
+    }
+    else {
+      return false;
+    }
   }
   
-  protected String getKayttaja() {
-    return kayttaja;
+  protected int getCookingTime() {
+    return cookingTime;
   }
-  protected void setKayttaja(String kayttaja) {
-	this.kayttaja = kayttaja;
-    if(!kayttaja.equals("")) System.out.println("Processor reserved for " + kayttaja);
+  protected int getCookingTimeMs() { // palauttaa keittoajan millisekunteina!
+    return cookingTime * 1000;
+  }
+  protected void setCookingTime(int cookingTime) {
+    this.cookingTime = cookingTime;
+  }
+  
+  protected String getUser() {
+    return user;
+  }
+  protected void setUser(String user) {
+	this.user = user;
+    if(!user.equals("")) System.out.println("Processor reserved for " + user);
     else System.out.println("Processor freed up");
   }
   
   /*
    * Run-metodi odottaa Processorin eli juomakeittimen keitosvaiheen loppuun (teht�v�nanto: 20s), ja sen j�lkeen muuttaa
-   * laitteen vesi- ja kiinte�-parametrit nolliksi. juoma-parametri saa arvokseen keittimess� olleen veden m��r�n.
+   * laitteen water- ja kiinte�-parametrit nolliksi. drink-parametri saa arvokseen keittimess� olleen veden m��r�n.
    * Lopuksi keitin ilmoittaa, ett� se ei ole en�� k�ynniss�.
    */
   public void run() {
     try{
       System.out.println("Processor Started");
-      Thread.sleep(this.getKeittoaikaMs());
-      int temp = this.getVesi();
-      setVesi(0);
-      setKiintea(0);
-      setJuoma(temp);
+      Thread.sleep(this.getCookingTimeMs());
+      int temp = this.getWater();
+      setWater(0);
+      setSolid(0);
+      setDrink(temp);
       running = false;
       System.out.println("Processor Finised");
     }

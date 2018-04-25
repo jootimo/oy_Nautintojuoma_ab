@@ -95,208 +95,208 @@ public class ProcessServer {
  
  /**
   * Tehtaan komponenttien (Silo, Conveyor, Processor, Pump, Tank) varaamismetodi.
-  * @param laitteenNimi varattava laite
-  * @param asiakas varauspyynnon lahettaja
+  * @param deviceName varattava laite
+  * @param user varauspyynnon lahettaja
  * @throws AlreadyReservedException 
   */
- public void reserve(String laitteenNimi, String asiakas) throws AlreadyReservedException {
-   if (laitteenNimi.equals("silo1")) {
-     if (!silo1.getVarattu()) {
-       silo1.setVarattu(true);
-       silo1.setKayttaja(asiakas);
+ public void reserve(String deviceName, String user) throws AlreadyReservedException {
+   if (deviceName.equals("silo1")) {
+     if (!silo1.getReserved()) {
+       silo1.setReserved(true);
+       silo1.setUser(user);
      }
      else {
     	 throw new AlreadyReservedException("Laite jo varattu");
      }
    }
-   else if (laitteenNimi.equals("silo2")) {
-     if (!silo2.getVarattu()) {
-       silo2.setVarattu(true);
-       silo2.setKayttaja(asiakas);
+   else if (deviceName.equals("silo2")) {
+     if (!silo2.getReserved()) {
+       silo2.setReserved(true);
+       silo2.setUser(user);
      }
      else {
     	 throw new AlreadyReservedException("Laite jo varattu");
      }
    }
-   else if (laitteenNimi.equals("silo3")) {
-     if (!silo3.getVarattu()) {
-       silo3.setVarattu(true);
-       silo3.setKayttaja(asiakas);
+   else if (deviceName.equals("silo3")) {
+     if (!silo3.getReserved()) {
+       silo3.setReserved(true);
+       silo3.setUser(user);
      }
      else {
     	 throw new AlreadyReservedException("Laite jo varattu");
      }
    }
-   else if (laitteenNimi.equals("silo4")) {
-     if (!silo4.getVarattu()) {
-       silo4.setVarattu(true);
-       silo4.setKayttaja(asiakas);
+   else if (deviceName.equals("silo4")) {
+     if (!silo4.getReserved()) {
+       silo4.setReserved(true);
+       silo4.setUser(user);
      }
      else {
     	 throw new AlreadyReservedException("Laite jo varattu"); 
      }
    }
-   else if (laitteenNimi.equals("siloLoader")) {
-     if (!siloLoader.getVarattu()) {
-       siloLoader.setVarattu(true);
-       siloLoader.setKayttaja(asiakas);
+   else if (deviceName.equals("siloLoader")) {
+     if (!siloLoader.getReserved()) {
+       siloLoader.setReserved(true);
+       siloLoader.setUser(user);
      }
      else {
     	 throw new AlreadyReservedException("Laite jo varattu");
      }
    }
-   else if (laitteenNimi.equals("procLoader1")) {
-     if (!procLoader1.getVarattu()) {
-       procLoader1.setVarattu(true);
-       procLoader1.setKayttaja(asiakas);
+   else if (deviceName.equals("procLoader1")) {
+     if (!procLoader1.getReserved()) {
+       procLoader1.setReserved(true);
+       procLoader1.setUser(user);
      }
      else {
     	 throw new AlreadyReservedException("Laite jo varattu");
      }
    }
-   else if (laitteenNimi.equals("procLoader2")) {
-     if (!procLoader2.getVarattu()) {
-       procLoader2.setVarattu(true);
-       procLoader2.setKayttaja(asiakas);
+   else if (deviceName.equals("procLoader2")) {
+     if (!procLoader2.getReserved()) {
+       procLoader2.setReserved(true);
+       procLoader2.setUser(user);
      }
      else {
     	 throw new AlreadyReservedException("Laite jo varattu");
      }
    }
-   else if (laitteenNimi.equals("proc1")) {
-       proc1.setVarattu(true);
-       proc1.setKayttaja(asiakas);
+   else if (deviceName.equals("proc1")) {
+       proc1.setReserved(true);
+       proc1.setUser(user);
         }
-   else if (laitteenNimi.equals("proc2")) {
-	   proc2.setVarattu(true);
-       proc2.setKayttaja(asiakas);
+   else if (deviceName.equals("proc2")) {
+	   proc2.setReserved(true);
+       proc2.setUser(user);
      }
-   else if (laitteenNimi.equals("proc3")) {
-	   proc3.setVarattu(true);
-       proc3.setKayttaja(asiakas);
+   else if (deviceName.equals("proc3")) {
+	   proc3.setReserved(true);
+       proc3.setUser(user);
      }
    
-   else if (laitteenNimi.equals("pump1")) {
-     if (!pump1.getVarattu()) {
-       pump1.setVarattu(true);
-       pump1.setKayttaja(asiakas);
+   else if (deviceName.equals("pump1")) {
+     if (!pump1.getReserved()) {
+       pump1.setReserved(true);
+       pump1.setUser(user);
      }
      else {
     	 throw new AlreadyReservedException("Laite jo varattu");
      }
    }
-   else if (laitteenNimi.equals("pump2")) {
-     if (!pump2.getVarattu()) {
-       pump2.setVarattu(true);
-       pump2.setKayttaja(asiakas);
+   else if (deviceName.equals("pump2")) {
+     if (!pump2.getReserved()) {
+       pump2.setReserved(true);
+       pump2.setUser(user);
      }
      else {
        throw new AlreadyReservedException("Laite jo varattu");
      }
    }
-   else if (laitteenNimi.equals("bottlePump1")) {
-     if (!bottlePump1.getVarattu()) {
-       bottlePump1.setVarattu(true);
-       bottlePump1.setKayttaja(asiakas);
+   else if (deviceName.equals("bottlePump1")) {
+     if (!bottlePump1.getReserved()) {
+       bottlePump1.setReserved(true);
+       bottlePump1.setUser(user);
      }
      else {
        throw new AlreadyReservedException("Laite jo varattu");
      }
    }
-   else if (laitteenNimi.equals("bottlePump2")) {
-     if (!bottlePump2.getVarattu()) {
-       bottlePump2.setVarattu(true);
-       bottlePump2.setKayttaja(asiakas);
+   else if (deviceName.equals("bottlePump2")) {
+     if (!bottlePump2.getReserved()) {
+       bottlePump2.setReserved(true);
+       bottlePump2.setUser(user);
      }
      else {
        throw new AlreadyReservedException("Laite jo varattu");
      }
    }
-   else if (laitteenNimi.equals("tank1")) {
-     if (!tank1.getVarattu()) {
-       tank1.setVarattu(true);
-       tank1.setKayttaja(asiakas);
+   else if (deviceName.equals("tank1")) {
+     if (!tank1.getReserved()) {
+       tank1.setReserved(true);
+       tank1.setUser(user);
      }
      else {
        throw new AlreadyReservedException("Laite jo varattu");
      }
    }
-   else if (laitteenNimi.equals("tank2")) {
-     if (!tank2.getVarattu()) {
-       tank2.setVarattu(true);
-       tank2.setKayttaja(asiakas);
+   else if (deviceName.equals("tank2")) {
+     if (!tank2.getReserved()) {
+       tank2.setReserved(true);
+       tank2.setUser(user);
      }
      else {
        throw new AlreadyReservedException("Laite jo varattu");
      }
    }
-   else if (laitteenNimi.equals("tank3")) {
-     if (!tank3.getVarattu()) {
-       tank3.setVarattu(true);
-       tank3.setKayttaja(asiakas);
+   else if (deviceName.equals("tank3")) {
+     if (!tank3.getReserved()) {
+       tank3.setReserved(true);
+       tank3.setUser(user);
      }
      else {
        throw new AlreadyReservedException("Laite jo varattu");
      }
    }
-   else if (laitteenNimi.equals("tank4")) {
-     if (!tank4.getVarattu()) {
-       tank4.setVarattu(true);
-       tank4.setKayttaja(asiakas);
+   else if (deviceName.equals("tank4")) {
+     if (!tank4.getReserved()) {
+       tank4.setReserved(true);
+       tank4.setUser(user);
      }
      else {
        throw new AlreadyReservedException("Laite jo varattu");
      }
    }
-   else if (laitteenNimi.equals("tank5")) {
-     if (!tank5.getVarattu()) {
-       tank5.setVarattu(true);
-       tank5.setKayttaja(asiakas);
+   else if (deviceName.equals("tank5")) {
+     if (!tank5.getReserved()) {
+       tank5.setReserved(true);
+       tank5.setUser(user);
      }
      else {
        throw new AlreadyReservedException("Laite jo varattu");
      }
    }
-   else if (laitteenNimi.equals("tank6")) {
-     if (!tank6.getVarattu()) {
-       tank6.setVarattu(true);
-       tank6.setKayttaja(asiakas);
+   else if (deviceName.equals("tank6")) {
+     if (!tank6.getReserved()) {
+       tank6.setReserved(true);
+       tank6.setUser(user);
      }
      else {
        throw new AlreadyReservedException("Laite jo varattu");
      }
    }
-   else if (laitteenNimi.equals("tank7")) {
-     if (!tank7.getVarattu()) {
-       tank7.setVarattu(true);
-       tank7.setKayttaja(asiakas);
+   else if (deviceName.equals("tank7")) {
+     if (!tank7.getReserved()) {
+       tank7.setReserved(true);
+       tank7.setUser(user);
      }
      else {
        throw new AlreadyReservedException("Laite jo varattu");
      }
    }
-   else if (laitteenNimi.equals("tank8")) {
-     if (!tank8.getVarattu()) {
-       tank8.setVarattu(true);
-       tank8.setKayttaja(asiakas);
+   else if (deviceName.equals("tank8")) {
+     if (!tank8.getReserved()) {
+       tank8.setReserved(true);
+       tank8.setUser(user);
      }
      else {
        throw new AlreadyReservedException("Laite jo varattu");
      }
    }
-   else if (laitteenNimi.equals("tank9")) {
-     if (!tank9.getVarattu()) {
-       tank9.setVarattu(true);
-       tank9.setKayttaja(asiakas);
+   else if (deviceName.equals("tank9")) {
+     if (!tank9.getReserved()) {
+       tank9.setReserved(true);
+       tank9.setUser(user);
      }
      else {
        throw new AlreadyReservedException("Laite jo varattu");
      }
    }
-   else if (laitteenNimi.equals("tank10")) {
-     if (!tank10.getVarattu()) {
-       tank10.setVarattu(true);
-       tank10.setKayttaja(asiakas);
+   else if (deviceName.equals("tank10")) {
+     if (!tank10.getReserved()) {
+       tank10.setReserved(true);
+       tank10.setUser(user);
      }
      else {
        throw new AlreadyReservedException("Laite jo varattu");
@@ -307,122 +307,122 @@ public class ProcessServer {
  
  /**
   * Tehtaan komponenttien (Silo, Conveyor, Processor, Pump, Tank) vapauttamismetodit.
-  * @param laitteenNimi vapautettava laite
+  * @param deviceName vapautettava laite
   */
- public void freeUp(String laitteenNimi) {
-   if (laitteenNimi.equals("silo1")) {
-     silo1.setVarattu(false);
-     silo1.setKayttaja("");
+ public void freeUp(String deviceName) {
+   if (deviceName.equals("silo1")) {
+     silo1.setReserved(false);
+     silo1.setUser("");
    }
-   else if (laitteenNimi.equals("silo2")) {
-     silo2.setVarattu(false);
-     silo2.setKayttaja("");
+   else if (deviceName.equals("silo2")) {
+     silo2.setReserved(false);
+     silo2.setUser("");
    }
-   else if (laitteenNimi.equals("silo3")) {
-     silo3.setVarattu(false);
-     silo3.setKayttaja("");
+   else if (deviceName.equals("silo3")) {
+     silo3.setReserved(false);
+     silo3.setUser("");
    }
-   else if (laitteenNimi.equals("silo4")) {
-     silo4.setVarattu(false);
-     silo4.setKayttaja("");
+   else if (deviceName.equals("silo4")) {
+     silo4.setReserved(false);
+     silo4.setUser("");
    }
-   else if (laitteenNimi.equals("siloLoader")) {
-     siloLoader.setVarattu(false);
-     siloLoader.setKayttaja("");
+   else if (deviceName.equals("siloLoader")) {
+     siloLoader.setReserved(false);
+     siloLoader.setUser("");
    }
-   else if (laitteenNimi.equals("procLoader1")) {
-     procLoader1.setVarattu(false);
-     procLoader1.setKayttaja("");
+   else if (deviceName.equals("procLoader1")) {
+     procLoader1.setReserved(false);
+     procLoader1.setUser("");
    }
-   else if (laitteenNimi.equals("procLoader2")) {
-     procLoader2.setVarattu(false);
-     procLoader2.setKayttaja("");
+   else if (deviceName.equals("procLoader2")) {
+     procLoader2.setReserved(false);
+     procLoader2.setUser("");
    }
-   else if (laitteenNimi.equals("proc1")) {
-     proc1.setVarattu(false);
+   else if (deviceName.equals("proc1")) {
+     proc1.setReserved(false);
      proc1.setRunning(false);
-     proc1.setKayttaja("");
+     proc1.setUser("");
    }
-   else if (laitteenNimi.equals("proc2")) {
-     proc2.setVarattu(false);
+   else if (deviceName.equals("proc2")) {
+     proc2.setReserved(false);
      proc2.setRunning(false);
-     proc2.setKayttaja("");
+     proc2.setUser("");
    }
-   else if (laitteenNimi.equals("proc3")) {
-     proc3.setVarattu(false);
+   else if (deviceName.equals("proc3")) {
+     proc3.setReserved(false);
      proc3.setRunning(false);
-     proc3.setKayttaja("");
+     proc3.setUser("");
    }
-   else if (laitteenNimi.equals("pump1")) {
-     pump1.setVarattu(false);
-     pump1.setKayttaja("");
+   else if (deviceName.equals("pump1")) {
+     pump1.setReserved(false);
+     pump1.setUser("");
    }
-   else if (laitteenNimi.equals("pump2")) {
-     pump2.setVarattu(false);
-     pump2.setKayttaja("");
+   else if (deviceName.equals("pump2")) {
+     pump2.setReserved(false);
+     pump2.setUser("");
    }
-   else if (laitteenNimi.equals("bottlePump1")) {
-     bottlePump1.setVarattu(false);
-     bottlePump1.setKayttaja("");
+   else if (deviceName.equals("bottlePump1")) {
+     bottlePump1.setReserved(false);
+     bottlePump1.setUser("");
    }
-   else if (laitteenNimi.equals("bottlePump2")) {
-     bottlePump2.setVarattu(false);
-     bottlePump2.setKayttaja("");
+   else if (deviceName.equals("bottlePump2")) {
+     bottlePump2.setReserved(false);
+     bottlePump2.setUser("");
    }
-   else if (laitteenNimi.equals("tank1")) {
-     tank1.setVarattu(false);
-     tank1.setKayttaja("");
+   else if (deviceName.equals("tank1")) {
+     tank1.setReserved(false);
+     tank1.setUser("");
    }
-   else if (laitteenNimi.equals("tank2")) {
-     tank2.setVarattu(false);
-     tank2.setKayttaja("");
+   else if (deviceName.equals("tank2")) {
+     tank2.setReserved(false);
+     tank2.setUser("");
    }
-   else if (laitteenNimi.equals("tank3")) {
-     tank3.setVarattu(false);
-     tank3.setKayttaja("");
+   else if (deviceName.equals("tank3")) {
+     tank3.setReserved(false);
+     tank3.setUser("");
    }
-   else if (laitteenNimi.equals("tank4")) {
-     tank4.setVarattu(false);
-     tank4.setKayttaja("");
+   else if (deviceName.equals("tank4")) {
+     tank4.setReserved(false);
+     tank4.setUser("");
    }
-   else if (laitteenNimi.equals("tank5")) {
-     tank5.setVarattu(false);
-     tank5.setKayttaja("");
+   else if (deviceName.equals("tank5")) {
+     tank5.setReserved(false);
+     tank5.setUser("");
    }
-   else if (laitteenNimi.equals("tank6")) {
-     tank6.setVarattu(false);
-     tank6.setKayttaja("");
+   else if (deviceName.equals("tank6")) {
+     tank6.setReserved(false);
+     tank6.setUser("");
    }
-   else if (laitteenNimi.equals("tank7")) {
-     tank7.setVarattu(false);
-     tank7.setKayttaja("");
+   else if (deviceName.equals("tank7")) {
+     tank7.setReserved(false);
+     tank7.setUser("");
    }
-   else if (laitteenNimi.equals("tank8")) {
-     tank8.setVarattu(false);
-     tank8.setKayttaja("");
+   else if (deviceName.equals("tank8")) {
+     tank8.setReserved(false);
+     tank8.setUser("");
    }
-   else if (laitteenNimi.equals("tank9")) {
-     tank9.setVarattu(false);
-     tank9.setKayttaja("");
+   else if (deviceName.equals("tank9")) {
+     tank9.setReserved(false);
+     tank9.setUser("");
    }
-   else if (laitteenNimi.equals("tank10")) {
-     tank10.setVarattu(false);
-     tank10.setKayttaja("");
+   else if (deviceName.equals("tank10")) {
+     tank10.setReserved(false);
+     tank10.setUser("");
    } 
  }
  
  
  /**
   * Saie, jossa laitteen kaynnistysmetodia kutsutaan. Nain Server ei jaa jumiin laitetta kaynnistettaessa.
-  * @param laitteenNimi kaynnistettava laite
+  * @param deviceName kaynnistettava laite
   * @param asiakas kaynnistyspyynnon lahettaja
-  * @param maara raaka-aineen/juoman maara
+  * @param amount raaka-aineen/juoman amount
   */
- public void start(String laitteenNimi, String asiakas, int maara) {
+ public void start(String deviceName, String asiakas, int amount) {
 	 Thread t = new Thread(){
 		 public void run(){
 			 try {
-				startDevice(laitteenNimi, asiakas, maara);
+				startDevice(deviceName, asiakas, amount);
 			} catch (AlreadyReservedException e) {
 				e.printStackTrace();
 			}
@@ -434,35 +434,35 @@ public class ProcessServer {
  
  /**
   * Tehtaan komponenttien (Silo, Conveyor, Processor, Pump, Tank) kaynnistysmetodit.
-  * @param laitteenNimi kaynnistettava laite
-  * @param asiakas kaynnistyspyynnon lahettaja
-  * @param maara raaka-aineen/juoman maara
+  * @param deviceName kaynnistettava laite
+  * @param user kaynnistyspyynnon lahettaja
+  * @param amount raaka-aineen/juoman maara
  * @throws Exception 
   */
- public void startDevice(String laitteenNimi, String asiakas, int maara) throws AlreadyReservedException {
+ public void startDevice(String deviceName, String user, int amount) throws AlreadyReservedException {
    
-   switch(laitteenNimi){
+   switch(deviceName){
      
      case "siloLoader":
        
-     if ((!siloLoader.getVarattu())) {
-    	reserve("siloLoader", asiakas);
-       if ((siloLoader.getKayttaja()).equals(asiakas)) {
-         if ((silo1.getKayttaja()).equals(asiakas)) {
-           siloLoader.run(maara);
-           silo1.lisaaTayttoaste(maara);
+     if ((!siloLoader.getReserved())) {
+    	reserve("siloLoader", user);
+       if ((siloLoader.getUser()).equals(user)) {
+         if ((silo1.getUser()).equals(user)) {
+           siloLoader.run(amount);
+           silo1.addFill(amount);
          }
-         else if ((silo2.getKayttaja()).equals(asiakas)) {
-           siloLoader.run(maara);
-           silo2.lisaaTayttoaste(maara);
+         else if ((silo2.getUser()).equals(user)) {
+           siloLoader.run(amount);
+           silo2.addFill(amount);
          } 
-         else if ((silo3.getKayttaja()).equals(asiakas)) {
-           siloLoader.run(maara);
-           silo3.lisaaTayttoaste(maara);
+         else if ((silo3.getUser()).equals(user)) {
+           siloLoader.run(amount);
+           silo3.addFill(amount);
          }
-         else if ((silo4.getKayttaja()).equals(asiakas)) {
-           siloLoader.run(maara);
-           silo4.lisaaTayttoaste(maara);
+         else if ((silo4.getUser()).equals(user)) {
+           siloLoader.run(amount);
+           silo4.addFill(amount);
          }
          freeUp("siloLoader");
        }
@@ -477,120 +477,120 @@ public class ProcessServer {
      
      case "procLoader1":
          
-         reserve("procLoader1", asiakas);
+         reserve("procLoader1", user);
 
-         if ((silo1.getKayttaja()).equals(asiakas)) {
-           if ((silo1.getTayttoaste() - maara) < 0) {  // Varmistetaan, ettei siilosta yriteta ottaa enempaa kuin mita siella on.
+         if ((silo1.getUser()).equals(user)) {
+           if ((silo1.getFill() - amount) < 0) {  // Varmistetaan, ettei siilosta yriteta ottaa enempaa kuin mita siella on.
              System.out.println("ERROR: Not enough material in the silo!");
              freeUp("procLoader1");
              break;
            }
-           if ((proc1.getKayttaja()).equals(asiakas)) {
-             procLoader1.run(maara);
-             silo1.vahennaTayttoaste(maara);
-             proc1.lisaaKiintea(maara);
-             proc1.lisaaVesi(maara * 5);
+           if ((proc1.getUser()).equals(user)) {
+             procLoader1.run(amount);
+             silo1.decreaseFill(amount);
+             proc1.addSolid(amount);
+             proc1.addWater(amount * 5);
            }
-           else if ((proc2.getKayttaja()).equals(asiakas)) {
-             procLoader1.run(maara);
-             silo1.vahennaTayttoaste(maara);
-             proc2.lisaaKiintea(maara);
-             proc2.lisaaVesi(maara * 5);
+           else if ((proc2.getUser()).equals(user)) {
+             procLoader1.run(amount);
+             silo1.decreaseFill(amount);
+             proc2.addSolid(amount);
+             proc2.addWater(amount * 5);
            }
-           else if ((proc3.getKayttaja()).equals(asiakas)) {
-             procLoader1.run(maara);
-             silo1.vahennaTayttoaste(maara);
-             proc3.lisaaKiintea(maara);
-             proc3.lisaaVesi(maara * 5);
+           else if ((proc3.getUser()).equals(user)) {
+             procLoader1.run(amount);
+             silo1.decreaseFill(amount);
+             proc3.addSolid(amount);
+             proc3.addWater(amount * 5);
            }
-           if (silo1.getTayttoaste() == 0) { // Vapautetaan siilo kayttajalta, jos se tyhjenee.
+           if (silo1.getFill() == 0) { // Vapautetaan siilo kayttajalta, jos se tyhjenee.
              freeUp("silo1");
            }
          }
          
-         else if ((silo2.getKayttaja()).equals(asiakas)) {
-           if ((silo2.getTayttoaste() - maara) < 0) {  // Varmistetaan, ettei siilosta yriteta ottaa enempaa kuin mita siella on.
+         else if ((silo2.getUser()).equals(user)) {
+           if ((silo2.getFill() - amount) < 0) {  // Varmistetaan, ettei siilosta yriteta ottaa enempaa kuin mita siella on.
              System.out.println("ERROR: Not enough material in the silo!");
              freeUp("procLoader1");
              break;
            }
-           if ((proc1.getKayttaja()).equals(asiakas)) {
-             procLoader1.run(maara);
-             silo2.vahennaTayttoaste(maara);
-             proc1.lisaaKiintea(maara);
-             proc1.lisaaVesi(maara * 5);
+           if ((proc1.getUser()).equals(user)) {
+             procLoader1.run(amount);
+             silo2.decreaseFill(amount);
+             proc1.addSolid(amount);
+             proc1.addWater(amount * 5);
            }
-           else if ((proc2.getKayttaja()).equals(asiakas)) {
-             procLoader1.run(maara);
-             silo2.vahennaTayttoaste(maara);
-             proc2.lisaaKiintea(maara);
-             proc2.lisaaVesi(maara * 5);
+           else if ((proc2.getUser()).equals(user)) {
+             procLoader1.run(amount);
+             silo2.decreaseFill(amount);
+             proc2.addSolid(amount);
+             proc2.addWater(amount * 5);
            }
-           else if ((proc3.getKayttaja()).equals(asiakas)) {
-             procLoader1.run(maara);
-             silo2.vahennaTayttoaste(maara);
-             proc3.lisaaKiintea(maara);
-             proc3.lisaaVesi(maara * 5);
+           else if ((proc3.getUser()).equals(user)) {
+             procLoader1.run(amount);
+             silo2.decreaseFill(amount);
+             proc3.addSolid(amount);
+             proc3.addWater(amount * 5);
            }
-           if (silo2.getTayttoaste() == 0) { // Vapautetaan siilo kayttajalta, jos se tyhjenee.
+           if (silo2.getFill() == 0) { // Vapautetaan siilo kayttajalta, jos se tyhjenee.
              freeUp("silo2");
            }
          }
          
-         else if ((silo3.getKayttaja()).equals(asiakas)) {
-            if ((silo3.getTayttoaste() - maara) < 0) {  // Varmistetaan, ettei siilosta yriteta ottaa enempaa kuin mita siella on.
+         else if ((silo3.getUser()).equals(user)) {
+            if ((silo3.getFill() - amount) < 0) {  // Varmistetaan, ettei siilosta yriteta ottaa enempaa kuin mita siella on.
              System.out.println("ERROR: Not enough material in the silo!");
              freeUp("procLoader1");
              break;
             }
-            if ((proc1.getKayttaja()).equals(asiakas)) {
-              procLoader1.run(maara);
-              silo3.vahennaTayttoaste(maara);
-              proc1.lisaaKiintea(maara);
-              proc1.lisaaVesi(maara * 5);
+            if ((proc1.getUser()).equals(user)) {
+              procLoader1.run(amount);
+              silo3.decreaseFill(amount);
+              proc1.addSolid(amount);
+              proc1.addWater(amount * 5);
             }
-            else if ((proc2.getKayttaja()).equals(asiakas)) {
-              procLoader1.run(maara);
-              silo3.vahennaTayttoaste(maara);
-              proc2.lisaaKiintea(maara);
-              proc2.lisaaVesi(maara * 5);
+            else if ((proc2.getUser()).equals(user)) {
+              procLoader1.run(amount);
+              silo3.decreaseFill(amount);
+              proc2.addSolid(amount);
+              proc2.addWater(amount * 5);
             }
-            else if ((proc3.getKayttaja()).equals(asiakas)) {
-              procLoader1.run(maara);
-              silo3.vahennaTayttoaste(maara);
-              proc3.lisaaKiintea(maara);
-              proc3.lisaaVesi(maara * 5);
+            else if ((proc3.getUser()).equals(user)) {
+              procLoader1.run(amount);
+              silo3.decreaseFill(amount);
+              proc3.addSolid(amount);
+              proc3.addWater(amount * 5);
             }
-            if (silo3.getTayttoaste() == 0) { // Vapautetaan siilo kayttajalta, jos se tyhjenee.
+            if (silo3.getFill() == 0) { // Vapautetaan siilo kayttajalta, jos se tyhjenee.
               freeUp("silo3");
             }
          }
          
-           else if ((silo4.getKayttaja()).equals(asiakas)) {
-             if ((silo4.getTayttoaste() - maara) < 0) {  // Varmistetaan, ettei siilosta yriteta ottaa enempaa kuin mita siella on.
+           else if ((silo4.getUser()).equals(user)) {
+             if ((silo4.getFill() - amount) < 0) {  // Varmistetaan, ettei siilosta yriteta ottaa enempaa kuin mita siella on.
              System.out.println("ERROR: Not enough material in the silo!");
              freeUp("procLoader1");
              break;
              }
-             if ((proc1.getKayttaja()).equals(asiakas)) {
-               procLoader1.run(maara);
-               silo4.vahennaTayttoaste(maara);
-               proc1.lisaaKiintea(maara);
-               proc1.lisaaVesi(maara * 5);
+             if ((proc1.getUser()).equals(user)) {
+               procLoader1.run(amount);
+               silo4.decreaseFill(amount);
+               proc1.addSolid(amount);
+               proc1.addWater(amount * 5);
              }
-             else if ((proc2.getKayttaja()).equals(asiakas)) {
-               procLoader1.run(maara);
-               silo4.vahennaTayttoaste(maara);
-               proc2.lisaaKiintea(maara);
-               proc2.lisaaVesi(maara * 5);
+             else if ((proc2.getUser()).equals(user)) {
+               procLoader1.run(amount);
+               silo4.decreaseFill(amount);
+               proc2.addSolid(amount);
+               proc2.addWater(amount * 5);
              }
-             else if ((proc3.getKayttaja()).equals(asiakas)) {
-               procLoader1.run(maara);
-               silo4.vahennaTayttoaste(maara);
-               proc3.lisaaKiintea(maara);
-               proc3.lisaaVesi(maara * 5);
+             else if ((proc3.getUser()).equals(user)) {
+               procLoader1.run(amount);
+               silo4.decreaseFill(amount);
+               proc3.addSolid(amount);
+               proc3.addWater(amount * 5);
              }
-             if (silo4.getTayttoaste() == 0) { // Vapautetaan siilo kayttajalta, jos se tyhjenee.
+             if (silo4.getFill() == 0) { // Vapautetaan siilo kayttajalta, jos se tyhjenee.
                freeUp("silo4");
              }
            }
@@ -601,120 +601,120 @@ public class ProcessServer {
      	case "procLoader2":
          
         
-        reserve("procLoader2", asiakas);
+        reserve("procLoader2", user);
            
-           if ((silo1.getKayttaja()).equals(asiakas)) {
-             if ((silo1.getTayttoaste() - maara) < 0) {  // Varmistetaan, ettei siilosta yriteta ottaa enempaa kuin mita siella on.
+           if ((silo1.getUser()).equals(user)) {
+             if ((silo1.getFill() - amount) < 0) {  // Varmistetaan, ettei siilosta yriteta ottaa enempaa kuin mita siella on.
              System.out.println("ERROR: Not enough material in the silo!");
              freeUp("procLoader2");
              break;
              }
-             if ((proc1.getKayttaja()).equals(asiakas)) {
-               procLoader2.run(maara);
-               silo1.vahennaTayttoaste(maara);
-               proc1.lisaaKiintea(maara);
-               proc1.lisaaVesi(maara * 5);
+             if ((proc1.getUser()).equals(user)) {
+               procLoader2.run(amount);
+               silo1.decreaseFill(amount);
+               proc1.addSolid(amount);
+               proc1.addWater(amount * 5);
              }
-             else if ((proc2.getKayttaja()).equals(asiakas)) {
-               procLoader2.run(maara);
-               silo1.vahennaTayttoaste(maara);
-               proc2.lisaaKiintea(maara);
-               proc2.lisaaVesi(maara * 5);
+             else if ((proc2.getUser()).equals(user)) {
+               procLoader2.run(amount);
+               silo1.decreaseFill(amount);
+               proc2.addSolid(amount);
+               proc2.addWater(amount * 5);
              }
-             else if ((proc3.getKayttaja()).equals(asiakas)) {
-               procLoader2.run(maara);
-               silo1.vahennaTayttoaste(maara);
-               proc3.lisaaKiintea(maara);
-               proc3.lisaaVesi(maara * 5);
+             else if ((proc3.getUser()).equals(user)) {
+               procLoader2.run(amount);
+               silo1.decreaseFill(amount);
+               proc3.addSolid(amount);
+               proc3.addWater(amount * 5);
              }
-             if (silo1.getTayttoaste() == 0) { // Vapautetaan siilo kayttajalta, jos se tyhjenee.
+             if (silo1.getFill() == 0) { // Vapautetaan siilo kayttajalta, jos se tyhjenee.
                freeUp("silo1");
              }
            }
            
-           else if ((silo2.getKayttaja()).equals(asiakas)) {
-             if ((silo2.getTayttoaste() - maara) < 0) {  // Varmistetaan, ettei siilosta yriteta ottaa enempaa kuin mita siella on.
+           else if ((silo2.getUser()).equals(user)) {
+             if ((silo2.getFill() - amount) < 0) {  // Varmistetaan, ettei siilosta yriteta ottaa enempaa kuin mita siella on.
              System.out.println("ERROR: Not enough material in the silo!");
              freeUp("procLoader2");
              break;
              }
-             if ((proc1.getKayttaja()).equals(asiakas)) {
-               procLoader2.run(maara);
-               silo2.vahennaTayttoaste(maara);
-               proc1.lisaaKiintea(maara);
-               proc1.lisaaVesi(maara * 5);
+             if ((proc1.getUser()).equals(user)) {
+               procLoader2.run(amount);
+               silo2.decreaseFill(amount);
+               proc1.addSolid(amount);
+               proc1.addWater(amount * 5);
              }
-             else if ((proc2.getKayttaja()).equals(asiakas)) {
-               procLoader2.run(maara);
-               silo2.vahennaTayttoaste(maara);
-               proc2.lisaaKiintea(maara);
-               proc2.lisaaVesi(maara * 5);
+             else if ((proc2.getUser()).equals(user)) {
+               procLoader2.run(amount);
+               silo2.decreaseFill(amount);
+               proc2.addSolid(amount);
+               proc2.addWater(amount * 5);
              }
-             else if ((proc3.getKayttaja()).equals(asiakas)) {
-               procLoader2.run(maara);
-               silo2.vahennaTayttoaste(maara);
-               proc3.lisaaKiintea(maara);
-               proc3.lisaaVesi(maara * 5);
+             else if ((proc3.getUser()).equals(user)) {
+               procLoader2.run(amount);
+               silo2.decreaseFill(amount);
+               proc3.addSolid(amount);
+               proc3.addWater(amount * 5);
              }
-             if (silo2.getTayttoaste() == 0) { // Vapautetaan siilo kayttajalta, jos se tyhjenee.
+             if (silo2.getFill() == 0) { // Vapautetaan siilo kayttajalta, jos se tyhjenee.
                freeUp("silo2");
              }
            }
            
-           else if ((silo3.getKayttaja()).equals(asiakas)) {
-             if ((silo3.getTayttoaste() - maara) < 0) {  // Varmistetaan, ettei siilosta yriteta ottaa enempaa kuin mita siella on.
+           else if ((silo3.getUser()).equals(user)) {
+             if ((silo3.getFill() - amount) < 0) {  // Varmistetaan, ettei siilosta yriteta ottaa enempaa kuin mita siella on.
              System.out.println("ERROR: Not enough material in the silo!");
              freeUp("procLoader2");
              break;
              }
-             if ((proc1.getKayttaja()).equals(asiakas)) {
-               procLoader2.run(maara);
-               silo3.vahennaTayttoaste(maara);
-               proc1.lisaaKiintea(maara);
-               proc1.lisaaVesi(maara * 5);
+             if ((proc1.getUser()).equals(user)) {
+               procLoader2.run(amount);
+               silo3.decreaseFill(amount);
+               proc1.addSolid(amount);
+               proc1.addWater(amount * 5);
              }
-             else if ((proc2.getKayttaja()).equals(asiakas)) {
-               procLoader2.run(maara);
-               silo3.vahennaTayttoaste(maara);
-               proc2.lisaaKiintea(maara);
-               proc2.lisaaVesi(maara * 5);
+             else if ((proc2.getUser()).equals(user)) {
+               procLoader2.run(amount);
+               silo3.decreaseFill(amount);
+               proc2.addSolid(amount);
+               proc2.addWater(amount * 5);
              }
-             else if ((proc3.getKayttaja()).equals(asiakas)) {
-               procLoader2.run(maara);
-               silo3.vahennaTayttoaste(maara);
-               proc3.lisaaKiintea(maara);
-               proc3.lisaaVesi(maara * 5);
+             else if ((proc3.getUser()).equals(user)) {
+               procLoader2.run(amount);
+               silo3.decreaseFill(amount);
+               proc3.addSolid(amount);
+               proc3.addWater(amount * 5);
              }
-             if (silo3.getTayttoaste() == 0) { // Vapautetaan siilo kayttajalta, jos se tyhjenee.
+             if (silo3.getFill() == 0) { // Vapautetaan siilo kayttajalta, jos se tyhjenee.
                freeUp("silo3");
              }
            }
            
-           else if ((silo4.getKayttaja()).equals(asiakas)) {
-             if ((silo4.getTayttoaste() - maara) < 0) {  // Varmistetaan, ettei siilosta yriteta ottaa enempaa kuin mita siella on.
+           else if ((silo4.getUser()).equals(user)) {
+             if ((silo4.getFill() - amount) < 0) {  // Varmistetaan, ettei siilosta yriteta ottaa enempaa kuin mita siella on.
              System.out.println("ERROR: Not enough material in the silo!");
              freeUp("procLoader2");
              break;
              }
-             if ((proc1.getKayttaja()).equals(asiakas)) {
-               procLoader2.run(maara);
-               silo4.vahennaTayttoaste(maara);
-               proc1.lisaaKiintea(maara);
-               proc1.lisaaVesi(maara * 5);
+             if ((proc1.getUser()).equals(user)) {
+               procLoader2.run(amount);
+               silo4.decreaseFill(amount);
+               proc1.addSolid(amount);
+               proc1.addWater(amount * 5);
              }
-             else if ((proc2.getKayttaja()).equals(asiakas)) {
-               procLoader2.run(maara);
-               silo4.vahennaTayttoaste(maara);
-               proc2.lisaaKiintea(maara);
-               proc2.lisaaVesi(maara * 5);
+             else if ((proc2.getUser()).equals(user)) {
+               procLoader2.run(amount);
+               silo4.decreaseFill(amount);
+               proc2.addSolid(amount);
+               proc2.addWater(amount * 5);
              }
-             else if ((proc3.getKayttaja()).equals(asiakas)) {
-               procLoader2.run(maara);
-               silo4.vahennaTayttoaste(maara);
-               proc3.lisaaKiintea(maara);
-               proc3.lisaaVesi(maara * 5);
+             else if ((proc3.getUser()).equals(user)) {
+               procLoader2.run(amount);
+               silo4.decreaseFill(amount);
+               proc3.addSolid(amount);
+               proc3.addWater(amount * 5);
              }
-             if (silo4.getTayttoaste() == 0) { // Vapautetaan siilo kayttajalta, jos se tyhjenee.
+             if (silo4.getFill() == 0) { // Vapautetaan siilo kayttajalta, jos se tyhjenee.
                freeUp("silo4");
              }
            }
@@ -729,217 +729,217 @@ public class ProcessServer {
       */     
        case "pump1":
            
-   	      reserve("pump1", asiakas);
-   	         if ((proc1.getKayttaja()).equals(asiakas)) {
-   	           int temp = proc1.getJuoma();
+   	      reserve("pump1", user);
+   	         if ((proc1.getUser()).equals(user)) {
+   	           int temp = proc1.getDrink();
    	           if (temp == 0) {  // varmistetaan, etta ei lahdeta pumppaamaan tyhjaa juomakeittimen juomasailiota!
    	             System.out.println("ERROR: No beverage to pump!");
    	             freeUp("pump1");
    	             break;
    	           }
-   	           if ((tank1.getKayttaja()).equals(asiakas)) {
+   	           if ((tank1.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank1.lisaa(temp);
+   	             tank1.add(temp);
    	           }
-   	           else if ((tank2.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank2.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank2.lisaa(temp);
+   	             tank2.add(temp);
    	           }
-   	           else if ((tank3.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank3.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank3.lisaa(temp);
+   	             tank3.add(temp);
    	           }
-   	           else if ((tank4.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank4.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank4.lisaa(temp);
+   	             tank4.add(temp);
    	           }
-   	           else if ((tank5.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank5.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank5.lisaa(temp);
+   	             tank5.add(temp);
    	           }
-   	           else if ((tank6.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank6.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank6.lisaa(temp);
+   	             tank6.add(temp);
    	           }
-   	           else if ((tank7.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank7.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank7.lisaa(temp);
+   	             tank7.add(temp);
    	           }
-   	           else if ((tank8.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank8.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank8.lisaa(temp);
+   	             tank8.add(temp);
    	           }
-   	           else if ((tank9.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank9.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank9.lisaa(temp);
+   	             tank9.add(temp);
    	           }
-   	           else if ((tank10.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank10.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank10.lisaa(temp);
+   	             tank10.add(temp);
    	           }
    	           else {
    	             System.out.println("ERROR: No tank reserved for the beverage!");
    	           }
    	         }
    	         
-   	         else if ((proc2.getKayttaja()).equals(asiakas)) {
-   	           int temp = proc2.getJuoma();
+   	         else if ((proc2.getUser()).equals(user)) {
+   	           int temp = proc2.getDrink();
    	           if (temp == 0) {  // varmistetaan, etta ei lahdeta pumppaamaan tyhjaa juomakeittimen juomasailiota!
    	             System.out.println("ERROR: No beverage to pump!");
    	             freeUp("pump1");
    	             break;
    	           } 
-   	           if ((tank1.getKayttaja()).equals(asiakas)) {
+   	           if ((tank1.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank1.lisaa(temp);
+   	             tank1.add(temp);
    	           }
-   	           else if ((tank2.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank2.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank2.lisaa(temp);
+   	             tank2.add(temp);
    	           }
-   	           else if ((tank3.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank3.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank3.lisaa(temp);
+   	             tank3.add(temp);
    	           }
-   	           else if ((tank4.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank4.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank4.lisaa(temp);
+   	             tank4.add(temp);
    	           }
-   	           else if ((tank5.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank5.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank5.lisaa(temp);
+   	             tank5.add(temp);
    	           }
-   	           else if ((tank6.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank6.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank6.lisaa(temp);
+   	             tank6.add(temp);
    	           }
-   	           else if ((tank7.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank7.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank7.lisaa(temp);
+   	             tank7.add(temp);
    	           }
-   	           else if ((tank8.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank8.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank8.lisaa(temp);
+   	             tank8.add(temp);
    	           }
-   	           else if ((tank9.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank9.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank9.lisaa(temp);
+   	             tank9.add(temp);
    	           }
-   	           else if ((tank10.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank10.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank10.lisaa(temp);
+   	             tank10.add(temp);
    	           }
    	           else {
    	             System.out.println("ERROR: No tank reserved for the beverage!");
    	           }
    	         }
    	         
-   	         else if ((proc3.getKayttaja()).equals(asiakas)) {
-   	           int temp = proc3.getJuoma();
+   	         else if ((proc3.getUser()).equals(user)) {
+   	           int temp = proc3.getDrink();
    	           if (temp == 0) {  // varmistetaan, etta ei lahdeta pumppaamaan tyhjaa juomakeittimen juomasailiota!
    	             System.out.println("ERROR: No beverage to pump!");
    	             freeUp("pump1");
    	             break;
    	           }
-   	           if ((tank1.getKayttaja()).equals(asiakas)) {
+   	           if ((tank1.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank1.lisaa(temp);
+   	             tank1.add(temp);
    	           }
-   	           else if ((tank2.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank2.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank2.lisaa(temp);
+   	             tank2.add(temp);
    	           }
-   	           else if ((tank3.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank3.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank3.lisaa(temp);
+   	             tank3.add(temp);
    	           }
-   	           else if ((tank4.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank4.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank4.lisaa(temp);
+   	             tank4.add(temp);
    	           }
-   	           else if ((tank5.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank5.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank5.lisaa(temp);
+   	             tank5.add(temp);
    	           }
-   	           else if ((tank6.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank6.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank6.lisaa(temp);
+   	             tank6.add(temp);
    	           }
-   	           else if ((tank7.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank7.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank7.lisaa(temp);
+   	             tank7.add(temp);
    	           }
-   	           else if ((tank8.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank8.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank8.lisaa(temp);
+   	             tank8.add(temp);
    	           }
-    	           else if ((tank9.getKayttaja()).equals(asiakas)) {
+    	           else if ((tank9.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank9.lisaa(temp);
+   	             tank9.add(temp);
    	           }
-   	           else if ((tank10.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank10.getUser()).equals(user)) {
    	             pump1.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank10.lisaa(temp);
+   	             tank10.add(temp);
               }
    	           else {
    	             System.out.println("ERROR: No tank reserved for the beverage!");
@@ -952,217 +952,217 @@ public class ProcessServer {
    	     case "pump2":
           
     	       
-   	    	 reserve("pump2", asiakas);
-   	         if ((proc1.getKayttaja()).equals(asiakas)) {
-   	           int temp = proc1.getJuoma();
+   	    	 reserve("pump2", user);
+   	         if ((proc1.getUser()).equals(user)) {
+   	           int temp = proc1.getDrink();
    	           if (temp == 0) {  // varmistetaan, etta ei lahdeta pumppaamaan tyhjaa juomakeittimen juomasailiota!
    	             System.out.println("ERROR: No beverage to pump!");
    	             freeUp("pump2");
    	             break;
    	           }
-   	           if ((tank1.getKayttaja()).equals(asiakas)) {
+   	           if ((tank1.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank1.lisaa(temp);
+   	             tank1.add(temp);
    	           }
-   	           else if ((tank2.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank2.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank2.lisaa(temp);
+   	             tank2.add(temp);
    	           }
-              else if ((tank3.getKayttaja()).equals(asiakas)) {
+              else if ((tank3.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank3.lisaa(temp);
+   	             tank3.add(temp);
    	           }
-   	           else if ((tank4.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank4.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank4.lisaa(temp);
+   	             tank4.add(temp);
    	           }
-   	           else if ((tank5.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank5.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank5.lisaa(temp);
+   	             tank5.add(temp);
    	           }
-   	           else if ((tank6.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank6.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank6.lisaa(temp);
+   	             tank6.add(temp);
    	           }
-   	           else if ((tank7.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank7.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank7.lisaa(temp);
+   	             tank7.add(temp);
    	           }
-   	           else if ((tank8.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank8.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank8.lisaa(temp);
+   	             tank8.add(temp);
    	           }
-   	           else if ((tank9.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank9.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank9.lisaa(temp);
+   	             tank9.add(temp);
    	           }
-   	           else if ((tank10.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank10.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc1.setJuoma(0);
+   	             proc1.setDrink(0);
    	             freeUp("proc1");
-   	             tank10.lisaa(temp);
+   	             tank10.add(temp);
    	           }
    	           else {
    	             System.out.println("ERROR: No tank reserved for the beverage!");
    	           }
    	         }
    	         
-   	         else if ((proc2.getKayttaja()).equals(asiakas)) {
-   	           int temp = proc2.getJuoma();
+   	         else if ((proc2.getUser()).equals(user)) {
+   	           int temp = proc2.getDrink();
    	           if (temp == 0) {  // varmistetaan, etta ei lahdeta pumppaamaan tyhjaa juomakeittimen juomasailiota!
    	             System.out.println("ERROR: No beverage to pump!");
    	             freeUp("pump2");
    	             break;
    	           }
-   	           if ((tank1.getKayttaja()).equals(asiakas)) {
+   	           if ((tank1.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank1.lisaa(temp);
+   	             tank1.add(temp);
    	           }
-   	           else if ((tank2.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank2.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank2.lisaa(temp);
+   	             tank2.add(temp);
    	           }
-   	           else if ((tank3.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank3.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank3.lisaa(temp);
+   	             tank3.add(temp);
    	           }
-   	           else if ((tank4.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank4.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank4.lisaa(temp);
+   	             tank4.add(temp);
    	           }
-   	           else if ((tank5.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank5.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank5.lisaa(temp);
+   	             tank5.add(temp);
    	           }
-   	           else if ((tank6.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank6.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank6.lisaa(temp);
+   	             tank6.add(temp);
    	           }
-   	           else if ((tank7.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank7.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank7.lisaa(temp);
+   	             tank7.add(temp);
    	           }
-   	           else if ((tank8.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank8.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank8.lisaa(temp);
+   	             tank8.add(temp);
    	           }
-   	           else if ((tank9.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank9.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank9.lisaa(temp);
+   	             tank9.add(temp);
    	           }
-   	           else if ((tank10.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank10.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc2.setJuoma(0);
+   	             proc2.setDrink(0);
    	             freeUp("proc2");
-   	             tank10.lisaa(temp);
+   	             tank10.add(temp);
    	           }
    	           else {
    	             System.out.println("ERROR: No tank reserved for the beverage!");
    	           }
    	         }
    	         
-   	         else if ((proc3.getKayttaja()).equals(asiakas)) {
-   	           int temp = proc3.getJuoma();
+   	         else if ((proc3.getUser()).equals(user)) {
+   	           int temp = proc3.getDrink();
    	           if (temp == 0) {  // varmistetaan, etta ei lahdeta pumppaamaan tyhjaa juomakeittimen juomasailiota!
    	             System.out.println("ERROR: No beverage to pump!");
    	             freeUp("pump2");
    	             break;
    	           }
-   	           if ((tank1.getKayttaja()).equals(asiakas)) {
+   	           if ((tank1.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank1.lisaa(temp);
+   	             tank1.add(temp);
    	           }
-   	           else if ((tank2.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank2.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank2.lisaa(temp);
+   	             tank2.add(temp);
    	           }
-   	           else if ((tank3.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank3.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank3.lisaa(temp);
+   	             tank3.add(temp);
    	           }
-   	           else if ((tank4.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank4.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank4.lisaa(temp);
+   	             tank4.add(temp);
    	           }
-   	           else if ((tank5.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank5.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank5.lisaa(temp);
+   	             tank5.add(temp);
    	           }
-   	           else if ((tank6.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank6.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank6.lisaa(temp);
+   	             tank6.add(temp);
    	           }
-   	           else if ((tank7.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank7.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank7.lisaa(temp);
+   	             tank7.add(temp);
    	           }
-   	           else if ((tank8.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank8.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank8.lisaa(temp);
+   	             tank8.add(temp);
    	           }
-   	           else if ((tank9.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank9.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank9.lisaa(temp);
+   	             tank9.add(temp);
    	           }
-   	           else if ((tank10.getKayttaja()).equals(asiakas)) {
+   	           else if ((tank10.getUser()).equals(user)) {
    	             pump2.run(temp);
-   	             proc3.setJuoma(0);
+   	             proc3.setDrink(0);
    	             freeUp("proc3");
-   	             tank10.lisaa(temp);
+   	             tank10.add(temp);
    	           }
    	           else {
    	             System.out.println("ERROR: No tank reserved for the beverage!");
@@ -1174,66 +1174,66 @@ public class ProcessServer {
      
      case "bottlePump1":
        
-     if (!bottlePump1.getVarattu()) {
-    	 reserve("bottlePump1", asiakas);
-         if ((tank1.getKayttaja()).equals(asiakas)) {
-        	 maara = tank1.getTilavuus();
-        	 bottlePump1.run(maara);
-        	 tank1.vahenna(maara);
+     if (!bottlePump1.getReserved()) {
+    	 reserve("bottlePump1", user);
+         if ((tank1.getUser()).equals(user)) {
+        	 amount = tank1.getVolume();
+        	 bottlePump1.run(amount);
+        	 tank1.decrease(amount);
         	 freeUp("tank1");
          }
-         else if ((tank2.getKayttaja()).equals(asiakas)) {
-        	 maara = tank2.getTilavuus();
-        	 bottlePump1.run(maara);
-        	 tank2.vahenna(maara);
+         else if ((tank2.getUser()).equals(user)) {
+        	 amount = tank2.getVolume();
+        	 bottlePump1.run(amount);
+        	 tank2.decrease(amount);
         	 freeUp("tank2");
          } 
-         else if ((tank3.getKayttaja()).equals(asiakas)) {
-        	 maara = tank3.getTilavuus();
-        	 bottlePump1.run(maara);
-        	 tank3.vahenna(maara);
+         else if ((tank3.getUser()).equals(user)) {
+        	 amount = tank3.getVolume();
+        	 bottlePump1.run(amount);
+        	 tank3.decrease(amount);
         	 freeUp("tank3");
          }
-         else if ((tank4.getKayttaja()).equals(asiakas)) {
-        	 maara = tank4.getTilavuus();
-        	 bottlePump1.run(maara);
-        	 tank4.vahenna(maara);
+         else if ((tank4.getUser()).equals(user)) {
+        	 amount = tank4.getVolume();
+        	 bottlePump1.run(amount);
+        	 tank4.decrease(amount);
         	 freeUp("tank4");
          } 
-         else if ((tank5.getKayttaja()).equals(asiakas)) {
-        	 maara = tank5.getTilavuus();
-        	 bottlePump1.run(maara);
-        	 tank5.vahenna(maara);
+         else if ((tank5.getUser()).equals(user)) {
+        	 amount = tank5.getVolume();
+        	 bottlePump1.run(amount);
+        	 tank5.decrease(amount);
         	 freeUp("tank5");
          } 
-         else if ((tank6.getKayttaja()).equals(asiakas)) {
-        	 maara = tank6.getTilavuus();
-        	 bottlePump1.run(maara);
-        	 tank6.vahenna(maara);
+         else if ((tank6.getUser()).equals(user)) {
+        	 amount = tank6.getVolume();
+        	 bottlePump1.run(amount);
+        	 tank6.decrease(amount);
         	 freeUp("tank6");
          } 
-         else if ((tank7.getKayttaja()).equals(asiakas)) {
-        	 maara = tank7.getTilavuus();
-        	 bottlePump1.run(maara);
-        	 tank7.vahenna(maara);
+         else if ((tank7.getUser()).equals(user)) {
+        	 amount = tank7.getVolume();
+        	 bottlePump1.run(amount);
+        	 tank7.decrease(amount);
         	 freeUp("tank7");
          } 
-         else if ((tank8.getKayttaja()).equals(asiakas)) {
-        	 maara = tank8.getTilavuus();
-        	 bottlePump1.run(maara);
-        	 tank8.vahenna(maara);
+         else if ((tank8.getUser()).equals(user)) {
+        	 amount = tank8.getVolume();
+        	 bottlePump1.run(amount);
+        	 tank8.decrease(amount);
         	 freeUp("tank8");
          } 
-         else if ((tank9.getKayttaja()).equals(asiakas)) {
-        	 maara = tank9.getTilavuus();
-        	 bottlePump1.run(maara);
-        	 tank9.vahenna(maara);
+         else if ((tank9.getUser()).equals(user)) {
+        	 amount = tank9.getVolume();
+        	 bottlePump1.run(amount);
+        	 tank9.decrease(amount);
         	 freeUp("tank9");
          } 
-         else if ((tank10.getKayttaja()).equals(asiakas)) {
-        	 maara = tank10.getTilavuus();
-        	 bottlePump1.run(maara);
-        	 tank10.vahenna(maara);
+         else if ((tank10.getUser()).equals(user)) {
+        	 amount = tank10.getVolume();
+        	 bottlePump1.run(amount);
+        	 tank10.decrease(amount);
         	 freeUp("tank10");
          } 
          freeUp("bottlePump1");
@@ -1245,66 +1245,66 @@ public class ProcessServer {
      
      case "bottlePump2":
          
-     if (!bottlePump2.getVarattu()) {
-    	 reserve("bottlePump2", asiakas);
-         if ((tank1.getKayttaja()).equals(asiakas)) {
-        	 maara = tank1.getTilavuus();
-        	 bottlePump2.run(maara);
-        	 tank1.vahenna(maara);
+     if (!bottlePump2.getReserved()) {
+    	 reserve("bottlePump2", user);
+         if ((tank1.getUser()).equals(user)) {
+        	 amount = tank1.getVolume();
+        	 bottlePump2.run(amount);
+        	 tank1.decrease(amount);
         	 freeUp("tank1");
          }
-         else if ((tank2.getKayttaja()).equals(asiakas)) {
-        	 maara = tank2.getTilavuus();
-        	 bottlePump2.run(maara);
-        	 tank2.vahenna(maara);
+         else if ((tank2.getUser()).equals(user)) {
+        	 amount = tank2.getVolume();
+        	 bottlePump2.run(amount);
+        	 tank2.decrease(amount);
         	 freeUp("tank2");
          } 
-         else if ((tank3.getKayttaja()).equals(asiakas)) {
-        	 maara = tank3.getTilavuus();
-        	 bottlePump2.run(maara);
-        	 tank3.vahenna(maara);
+         else if ((tank3.getUser()).equals(user)) {
+        	 amount = tank3.getVolume();
+        	 bottlePump2.run(amount);
+        	 tank3.decrease(amount);
         	 freeUp("tank3");
          }
-         else if ((tank4.getKayttaja()).equals(asiakas)) {
-        	 maara = tank4.getTilavuus();
-        	 bottlePump2.run(maara);
-        	 tank4.vahenna(maara);
+         else if ((tank4.getUser()).equals(user)) {
+        	 amount = tank4.getVolume();
+        	 bottlePump2.run(amount);
+        	 tank4.decrease(amount);
         	 freeUp("tank4");
          } 
-         else if ((tank5.getKayttaja()).equals(asiakas)) {
-        	 maara = tank5.getTilavuus();
-        	 bottlePump2.run(maara);
-        	 tank5.vahenna(maara);
+         else if ((tank5.getUser()).equals(user)) {
+        	 amount = tank5.getVolume();
+        	 bottlePump2.run(amount);
+        	 tank5.decrease(amount);
         	 freeUp("tank5");
          } 
-         else if ((tank6.getKayttaja()).equals(asiakas)) {
-        	 maara = tank6.getTilavuus();
-        	 bottlePump2.run(maara);
-        	 tank6.vahenna(maara);
+         else if ((tank6.getUser()).equals(user)) {
+        	 amount = tank6.getVolume();
+        	 bottlePump2.run(amount);
+        	 tank6.decrease(amount);
         	 freeUp("tank6");
          } 
-         else if ((tank7.getKayttaja()).equals(asiakas)) {
-        	 maara = tank7.getTilavuus();
-        	 bottlePump2.run(maara);
-        	 tank7.vahenna(maara);
+         else if ((tank7.getUser()).equals(user)) {
+        	 amount = tank7.getVolume();
+        	 bottlePump2.run(amount);
+        	 tank7.decrease(amount);
         	 freeUp("tank7");
          } 
-         else if ((tank8.getKayttaja()).equals(asiakas)) {
-        	 maara = tank8.getTilavuus();
-        	 bottlePump2.run(maara);
-        	 tank8.vahenna(maara);
+         else if ((tank8.getUser()).equals(user)) {
+        	 amount = tank8.getVolume();
+        	 bottlePump2.run(amount);
+        	 tank8.decrease(amount);
         	 freeUp("tank8");
          } 
-         else if ((tank9.getKayttaja()).equals(asiakas)) {
-        	 maara = tank9.getTilavuus();
-        	 bottlePump2.run(maara);
-        	 tank9.vahenna(maara);
+         else if ((tank9.getUser()).equals(user)) {
+        	 amount = tank9.getVolume();
+        	 bottlePump2.run(amount);
+        	 tank9.decrease(amount);
         	 freeUp("tank9");
          } 
-         else if ((tank10.getKayttaja()).equals(asiakas)) {
-        	 maara = tank10.getTilavuus();
-        	 bottlePump2.run(maara);
-        	 tank10.vahenna(maara);
+         else if ((tank10.getUser()).equals(user)) {
+        	 amount = tank10.getVolume();
+        	 bottlePump2.run(amount);
+        	 tank10.decrease(amount);
         	 freeUp("tank10");
          } 
          freeUp("bottlePump2");
@@ -1317,7 +1317,7 @@ public class ProcessServer {
        
      if ((!proc1.getRunning())) {
     	 proc1.setRunning(true);
-    	 if ((proc1.getKayttaja()).equals(asiakas)) {
+    	 if ((proc1.getUser()).equals(user)) {
     		 proc1.run();
     		}
      else {
@@ -1333,7 +1333,7 @@ public class ProcessServer {
        
     if ((!proc2.getRunning())) {
     	proc2.setRunning(true);
-    	if ((proc2.getKayttaja()).equals(asiakas)) {
+    	if ((proc2.getUser()).equals(user)) {
          proc2.run();
        }
        else {
@@ -1349,7 +1349,7 @@ public class ProcessServer {
        
      if ((!proc3.getRunning())) {
     	proc3.setRunning(true);
-       if ((proc3.getKayttaja()).equals(asiakas)) {
+       if ((proc3.getUser()).equals(user)) {
          proc3.run();
        }
        else {

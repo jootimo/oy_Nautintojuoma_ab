@@ -9,53 +9,53 @@ import java.io.Serializable;
 public class Tank extends Thread implements Serializable{
   /*
    * Luokan Tank parametrit:
-   * varattu: Ilmaisee, onko kyseess� oleva laite varattu. (true = varattu, false = vapaa)
-   * tilavuus: Ilmaisee, kuinka paljon nestett� laitteessa on litroissa. (max. 10000 l)
+   * reserved: Ilmaisee, onko kyseess� oleva laite reserved. (true = reserved, false = vapaa)
+   * volume: Ilmaisee, kuinka paljon nestett� laitteessa on litroissa. (max. 10000 l)
    * k�ytt�j�: Ilmaisee laitteen senhetkisen k�ytt�j�n.
    */
-  private boolean varattu;
-  private int tilavuus; 
-  private String kayttaja;
+  private boolean reserved;
+  private int volume;
+  private String user;
   
   /*
    * Luokan Tank konstruktori:
    * M��ritt�� laitteen aloitusarvot (oletuksena tyhj�).
    */
   public Tank() {
-    varattu = false;
-    tilavuus = 0;
-    kayttaja = "";
+    reserved = false;
+    volume = 0;
+    user = "";
 
   }
   
   /*
    * Luokan Tank getterit ja setterit:
-   * HUOM! tilavuus-parametrin set-metodi ollaan korvattu lis��- ja v�henn�-metodilla.
+   * HUOM! volume-parametrin set-metodi ollaan korvattu lis��- ja v�henn�-metodilla.
    */
-  protected boolean getVarattu() {
-    return varattu;
+  protected boolean getReserved() {
+    return reserved;
   }
-  protected void setVarattu(boolean varattu) {
-    this.varattu = varattu;
-  }
-  
-  protected int getTilavuus() {
-    return tilavuus;
+  protected void setReserved(boolean reserved) {
+    this.reserved = reserved;
   }
   
-  protected boolean lisaa(int juoma) {
-    if (juoma <= 10000) {
-      this.tilavuus = juoma;
+  protected int getVolume() {
+    return volume;
+  }
+  
+  protected boolean add(int drink) {
+    if (drink <= 10000) {
+      this.volume = drink;
       return true;
     }
     else {
       return false;
     }
   }
-  protected boolean vahenna(int juoma) {
-    if (this.tilavuus - juoma >= 0) {
-      this.tilavuus -= juoma;
-      System.out.println("Pumping from tank: " + juoma);
+  protected boolean decrease(int drink) {
+    if (this.volume - drink >= 0) {
+      this.volume -= drink;
+      System.out.println("Pumping from tank: " + drink);
       return true;
     }
     else {
@@ -63,12 +63,12 @@ public class Tank extends Thread implements Serializable{
     }
   }
   
-  protected String getKayttaja() {
-    return kayttaja;
+  protected String getUser() {
+    return user;
   }
-  protected void setKayttaja(String kayttaja) {
-    this.kayttaja = kayttaja;
-    if(!kayttaja.equals("")) System.out.println("Tank reserved for " + kayttaja);
+  protected void setUser(String user) {
+    this.user = user;
+    if(!user.equals("")) System.out.println("Tank reserved for " + user);
     else System.out.println("Tank freed up");
   }
   
